@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>김건호's 포트폴리오</title>
+
+    <link href="assets/images/fav-icon.png" type="image/png" rel="icon">
+    <link rel="stylesheet" href="./assets/styles/common.css" type="text/css">
+    <link rel="stylesheet" href="./assets/styles/index.css" type="text/css">
+
+    <script defer src="assets/scripts/index.js"></script>
+    <script defer src="assets/scripts/dialog.js"></script>
+    <script defer src="assets/scripts/scroll-status.js"></script>
+    <script defer src="assets/scripts/keyword.js"></script>
+</head>
+<body>
+<div id="dialog-blur-area" class=""></div>
+<div id="dialog-project" class="">
+    <button class="button-close">
+        <img class="icon" src="./assets/images/index/dialog/icon-close.png" alt="close">
+    </button>
+    <span class="title">AVS</span>
+
+    <div class="capture-slide">
+        <img class="capture visible" src="./assets/images/index/project-capture/avs/avs-1.png" alt="capture1"
+             data-value="1">
+        <img class="capture" src="./assets/images/index/project-capture/avs/avs-2.png" alt="capture2" data-value="2">
+
+        <div class="controller">
+            <label class="label">
+                <input class="radio" checked name="step" type="radio" value="1">
+                <span class="knob"></span>
+            </label>
+            <label class="label">
+                <input class="radio" name="step" type="radio" value="2">
+                <span class="knob"></span>
+            </label>
+        </div>
+    </div>
+</div>
+
+<a id="topAnchor" href="#box-intro" class="visible">
+    <img class="icon" src="assets/images/index/main/icon-chevron-up.png" alt="up-squared">
+</a>
+<a id="changeTheme" class="visible">
+    <img class="icon" src="assets/images/icon-dark-theme.png" alt="change-theme">
+</a>
+
+<header id="header">
+    <div class="scroll-area">
+        <div class="scroll-status"></div>
+    </div>
+    <div class="alternative-container">
+        <h1 class="title">김건호's 포트폴리오</h1>
+        <button id="linkToggleButton">
+            <img class="icon" src="./assets/images/index/header/icon-header-dropdown2.png" alt="dropdown">
+        </button>
+    </div>
+    <div class="link-container">
+        <a class="link internal" id="link-intro" href="#box-intro">Intro</a>
+        <a class="link internal" id="link-about" href="#box-about">About Me</a>
+        <a class="link internal" id="link-education" href="#box-education">Education</a>
+        <a class="link internal" id="link-certificate" href="#box-certificate">Certificate</a>
+        <a class="link internal" id="link-career" href="#box-career">Career</a>
+        <a class="link internal" id="link-tech" href="#box-tech">Tech</a>
+        <a class="link internal" id="link-project" href="#box-project">Project</a>
+    </div>
+</header>
+
+<main id="main">
+    <div class="section-container">
+        <section id="box-intro" data-index="0" class="box">
+            <div class="section-content">
+                <a href="#box-about" class="link">
+                    <img class="scroll-down" src="./assets/images/index/main/scroll-down1.png" alt="scroll-down">
+                </a>
+                <h2 class="sub-title">Intro</h2>
+                <div class="detail">
+                    <span class="greeting">안녕하세요.</span>
+                    <span class="name">끊임없이
+                        <span class="keyword-wrapper">
+                            <span class="keyword invisible" data-index="0">발전</span>
+                            <span class="keyword visible" data-index="1">성장</span>
+                            <span class="keyword" data-index="2">노력</span>
+                            <span class="keyword" data-index="3">도전</span>
+                            <span class="temp" data-index="3">공백</span>
+                        </span>
+                        하는 백엔드 개발자 <span class="accent">김건호</span>입니다.</span>
+                    <span class="introduce">
+                        웹, 앱, 임베디드 개발 경험을 바탕으로 백엔드 개발에 필요한 문제 해결 능력을 갖추었습니다.<br>
+                        다양한 분야의 개발 경험을 통해 직면한 기술적 문제를 해결해가며,<br>
+                        성장 가능한 개발자로 지속적으로 발전해 나갈 것입니다.
+                    </span>
+                </div>
+            </div>
+        </section>
+        <section id="box-about" data-index="1" class="box">
+            <div class="section-content">
+                <h2 class="sub-title">About Me</h2>
+                <div class="detail">
+                    <div class="profile-area">
+                        <img class="img-profile" src="./assets/images/index/main/profile-web.jpg" alt="profile">
+                    </div>
+                    <div class="profile-data">
+<!--                        <span class="info">이름</span>-->
+                        <img class="icon" src="./assets/images/index/about/icon-name.png" alt="이름">
+                        <span class="desc">김건호</span>
+
+<!--                        <span class="info">생년월일</span>-->
+                        <img class="icon" src="./assets/images/index/about/icon-birth.png" alt="생년월일">
+                        <span class="desc">1996.02.06</span>
+
+<!--                        <span class="info">전화번호</span>-->
+                        <img class="icon" src="./assets/images/index/about/icon-phone.png" alt="전화번호">
+                        <span class="desc">010-9262-5734</span>
+
+<!--                        <span class="info">이메일 주소</span>-->
+                        <img class="icon" src="./assets/images/index/about/icon-email.png" alt="이메일 주소">
+                        <span class="desc">prjsghq7@naver.com</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="box-education" data-index="2" class="box">
+            <div class="section-content">
+                <h2 class="sub-title">Education</h2>
+                <div class="detail">
+                    <span class="name">도원고등학교</span>
+                    <div class="info">
+                        <span class="desc">졸업 : 2012 ~ 2014</span>
+                    </div>
+                    <span class="name">영남이공대학교</span>
+                    <div class="info">
+                        <span class="desc">졸업 : 2015.03 ~ 2021.02</span>
+                        <span class="desc">학과 : 컴퓨터정보과</span>
+                        <span class="desc">학점 : 4.06 / 4.5</span>
+                    </div>
+                    <span class="name">스마트웹 응용 프로그래밍 개발자 양성 과정</span>
+                    <div class="info">
+                        <span class="desc">이수 예정 : 2025.02.13 ~ 2025.08.04</span>
+                        <span class="desc">이수 기관 : 코리아 it 아카데미</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="box-certificate" data-index="3" class="box">
+            <div class="section-content">
+                <h2 class="sub-title">Certificate</h2>
+                <div class="detail">
+                    <span class="name">컴퓨터 활용 2급</span>
+                    <div class="info">
+                        <span class="desc">취득 날짜 : 2015년 09월 04일</span>
+                        <span class="desc">취득 기관 : 대한상공회의소 자격평가사업단</span>
+                    </div>
+                    <span class="name">정보처리기사</span>
+                    <div class="info">
+                        <span class="desc">취득 예정 : 2025 취득 예정</span>
+                        <span class="desc">취득 기관 : 한국산업인력공단</span>
+                    </div>
+                    <span class="name">SQL D</span>
+                    <div class="info">
+                        <span class="desc">취득 날짜 : 2025 06월</span>
+                        <span class="desc">취득 기관 : 한국데이터산업진흥원(K-DATA)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="box-career" data-index="4" class="box">
+            <div class="section-content">
+                <h2 class="sub-title">Career</h2>
+                <div class="detail">
+                    <span class="name">트론트(주)</span>
+                    <div class="info">
+                        <div class="project">
+                            <!-- HMI -->
+                            <span class="project-name">내비게이션 개발 및 유지보수(HMI)</span>
+                            <div class="project-info">
+                                <span class="division">주요 업무</span>
+                                <span class="desc">
+                                    내비게이션 프로그램 화면 구성 및 유지보수 개발
+                                </span>
+                                <span class="division">기간</span>
+                                <span class="desc">2021.04 ~ 2023.03</span>
+                                <span class="division">사용 언어</span>
+                                <div class="img-container">
+                                    <div class="icon-area">
+                                        <img class="icon" src="./assets/images/index/skills/skill-cpp.png" alt="c++">
+                                        <span class="desc">C++</span>
+                                    </div>
+                                </div>
+                                <span class="division">개발툴</span>
+                                <div class="img-container">
+                                    <div class="icon-area">
+                                        <img class="icon" src="./assets/images/index/tools/tool-visual-studio.png"
+                                             alt="Visual Studio">
+                                        <span class="desc">Visual Studio</span>
+                                    </div>
+                                </div>
+                                <span class="division">ETC</span>
+                                <div class="img-container">
+                                    <div class="icon-area">
+                                        <img class="icon" src="assets/images/index/etc/etc-sourcetree.png"
+                                             alt="Sourcetree">
+                                        <span class="desc">Sourcetree</span>
+                                    </div>
+                                    <div class="icon-area">
+                                        <img class="icon" src="assets/images/index/etc/etc-confluence.png"
+                                             alt="Confluence">
+                                        <span class="desc">Confluence</span>
+                                    </div>
+                                    <div class="icon-area">
+                                        <img class="icon" src="assets/images/index/etc/etc-bitbucket.png"
+                                             alt="Bitbucket">
+                                        <span class="desc">Bitbucket</span>
+                                    </div>
+                                </div>
+                                <span class="division">설명</span>
+                                <ul class="explanation">
+                                    <li>내비게이션 화면에 보이는 맵 영역, 경로 찾기, 메뉴, 리스트등의 화면을 구성하였습니다.</li>
+                                    <li>화면 구성의 경우, 최신 UI/UX 가이드 표준에 맞춰 유지보수 하였습니다.</li>
+                                    <li>내비게이션 화면에 보여지는 데이터와 버튼 클릭시 동작에 대한 호출을 API를 통해 구현하였습니다.</li>
+                                    <li>제공되는 프레임워크의 생명주기를 통해 화면 표출에 어색함이 없도록 구현하였습니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 모두의 약국 -->
+                        <div class="project">
+                            <span class="project-name">모두의 약국</span>
+                            <div class="project-info">
+                                <span class="division">주요 업무</span>
+                                <span class="desc">
+                                    "모두의 약국" 웹/앱 서비스 관리를 위한 관리자 페이지 유지보수 및 추가 개발
+                                </span>
+                                <span class="division">기간</span>
+                                <span class="desc">2023.04 ~ 2023.11</span>
+                                <span class="division">사용 언어</span>
+                                <div class="img-container">
+                                    <div class="icon-area">
+                                        <img class="icon" src="./assets/images/index/skills/skill-html.png" alt="HTML">
+                                        <span class="desc">HTML</span>
+                                    </div>
+                                    <div class="icon-area">
+                                        <img class="icon" src="./assets/images/index/skills/skill-css.png" alt="CSS">
+                                        <span class="desc">CSS</span>
+                                    </div>
+                                    <div class="icon-area">
+                                        <img class="icon" src="./assets/images/index/skills/skill-js.png"
+                                             alt="JavaScript">
+                                        <span class="desc">JavaScript</span>
+                                    </div>
+                                    <div class="icon-area">
+                                        <img class="icon" src="./assets/images/index/skills/skill-java.png" alt="Java">
+                                        <span class="desc">Java</span>
+                                    </div>
+                                    <div class="icon-area">
+                                        <img class="icon" src="./assets/images/index/skills/skill-spring-boot.png"
+                                             alt="Spring Boot">
+                                        <span class="desc">Spring Boot</span>
+                                    </div>
+                                    <div class="icon-area">
+                                        <img class="icon" src="./assets/images/index/skills/skill-mysql.png"
+                                             alt="MySQL">
+                                        <span class="desc">MySQL</span>
+                                    </div>
+                                </div>
+                                <span class="division">개발툴</span>
+                                <div class="img-container">
+                                    <div class="icon-area">
+                                        <img class="icon" src="./assets/images/index/tools/tool-eclipse.png"
+                                             alt="eclipse">
+                                        <span class="desc">eclipse</span>
+                                    </div>
+                                    <div class="icon-area">
+                                        <img class="icon" src="./assets/images/index/tools/tool-workbench.png"
+                                             alt="MySQL Workbench">
+                                        <span class="desc">MySQL Workbench</span>
+                                    </div>
+                                </div>
+                                <span class="division">ETC</span>
+                                <div class="img-container">
+                                    <div class="icon-area">
+                                        <img class="icon" src="assets/images/index/etc/etc-sourcetree.png"
+                                             alt="Sourcetree">
+                                        <span class="desc">Sourcetree</span>
+                                    </div>
+                                    <div class="icon-area">
+                                        <img class="icon" src="assets/images/index/etc/etc-confluence.png"
+                                             alt="Confluence">
+                                        <span class="desc">Confluence</span>
+                                    </div>
+                                </div>
+                                <span class="division">설명</span>
+                                <ul class="explanation">
+                                    <li>웹/앱으로 서비스 되고 있는 "모두의 약국"의 관리자페이지의 유지보수 및 추가 개발을 진행하였습니다.</li>
+                                    <li>화면 레이아웃의 경우, 퍼블리셔로 부터 퍼블리싱을 받은 후 추가 작업을 통해 마무리 하였습니다.</li>
+                                    <li>회원, 게시물, 배너등 DB에 저장되는 데이터들을 관리할 수 있도록 구현하였습니다.</li>
+                                    <li>웹/앱 개발자들과 협력하여 각 서비스들이 문제없이 동작이 되는지 테스트를 진행하였습니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 내비게이션 middleware -->
+                        <div class="project">
+                            <span class="project-name">내비게이션 개발(Middleware)</span>
+                            <div class="project-info">
+                                <span class="division">주요 업무</span>
+                                <span class="desc">
+                                    내비게이션 개발 기능 구현
+                                </span>
+                                <span class="division">기간</span>
+                                <span class="desc">2023.10 ~ 2024.05</span>
+                                <span class="division">사용 언어</span>
+                                <div class="img-container">
+                                    <div class="icon-area">
+                                        <img class="icon" src="./assets/images/index/skills/skill-java.png" alt="c++">
+                                        <span class="desc">Java</span>
+                                    </div>
+                                </div>
+                                <span class="division">개발툴</span>
+                                <div class="img-container">
+                                    <div class="icon-area">
+                                        <img class="icon" src="./assets/images/index/tools/tool-android-studio.png"
+                                             alt="android studio">
+                                        <span class="desc">Android studio</span>
+                                    </div>
+                                </div>
+                                <span class="division">ETC</span>
+                                <div class="img-container">
+                                    <div class="icon-area">
+                                        <img class="icon" src="assets/images/index/etc/etc-confluence.png"
+                                             alt="Confluence">
+                                        <span class="desc">Confluence</span>
+                                    </div>
+                                </div>
+                                <span class="division">설명</span>
+                                <ul class="explanation">
+                                    <li>내비게이션의 긴급(SOS)콜 관련 동작 및 데이터를 제어하는 파트를 담당하였습니다.</li>
+                                    <li>국가별 긴급(SOS)콜 전화 번호, 전화 가능 상태, 현재 콜 동작상태등 관련된 데이터를 JSON 형태로 받아 파싱하였습니다.</li>
+                                    <li>긴급(SOS)콜 상태가 전환되면 다른 서비스에서 동작이 제어될수 있도록 브로드캐스트(Broadcast) 메시지를 전송하였습니다.</li>
+                                    <li>긴급(SOS)콜 관련 데이터를 다른 서비스에 제공하기 위해 API가이드를 타서비스에 제공하는 방식으로 협업을 진행하였습니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="box-tech" data-index="5" class="box">
+            <div class="section-content">
+                <h2 class="sub-title">Tech</h2>
+                <div class="detail">
+                    <!-- Develop Tool -->
+                    <span class="sub-title">Develop Tool</span>
+                    <div class="skills-wrapper">
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name">Intellij</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/tools/tool-intellij.png" alt="Intellij">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name normal">eclipse</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/tools/tool-eclipse.png" alt="eclipse">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name normal">Visual Studio</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/tools/tool-visual-studio.png"
+                                 alt="Visual Studio">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name normal">Visual Studio Code</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/tools/tool-visual-studio-code.png"
+                                 alt="Visual Studio Code">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name small">Workbench</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/tools/tool-workbench.png" alt="Workbench">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name normal">Android Studio</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/tools/tool-android-studio.png"
+                                 alt="Android Studio">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name normal">arduino IDE</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/tools/tool-arduino-ide.png" alt="arduino IDE">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name normal">App Inventor</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/tools/tool-app-inventor.png"
+                                 alt="App Inventor">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name">Unity Hub</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/tools/tool-unity-hub.png" alt="Unity Hub">
+                        </div>
+                    </div>
+
+                    <!-- FrontEnd -->
+                    <span class="sub-title">FrontEnd</span>
+                    <div class="skills-wrapper">
+
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name">HTML</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/skills/skill-html.png" alt="HTML">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name">CSS</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/skills/skill-css.png" alt="CSS">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name small">JavaScript</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/skills/skill-js.png" alt="JavaScript">
+                        </div>
+                    </div>
+
+                    <!-- BackEnd -->
+                    <span class="sub-title">BackEnd</span>
+                    <div class="skills-wrapper">
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name">Java</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/skills/skill-java.png" alt="Java">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name">C</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/skills/skill-c.png" alt="C">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name">C++</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/skills/skill-cpp.png" alt="C++">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name">C#</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/skills/skill-c-sharp.png" alt="C#">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name">Spring Boot</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/skills/skill-spring-boot.png"
+                                 alt="Spring Boot">
+                        </div>
+                    </div>
+
+                    <!-- DB -->
+                    <span class="sub-title">DB</span>
+                    <div class="skills-wrapper">
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name normal">MariaDB</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/skills/skill-mariadb.png" alt="MariaDB">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name normal">MySQL</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/skills/skill-mysql.png" alt="MySQL">
+                        </div>
+                    </div>
+
+                    <!-- ETC -->
+                    <span class="sub-title">ETC</span>
+                    <div class="skills-wrapper">
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name small">Sourcetree</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/etc/etc-sourcetree.png" alt="Sourcetree">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name small">Confluence</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/etc/etc-confluence.png" alt="Confluence">
+                        </div>
+                        <div class="skill">
+                            <span class="blur-area">
+                                <span class="name small">Bitbucket</span>
+                            </span>
+                            <img class="icon" src="./assets/images/index/etc/etc-bitbucket.png" alt="Bitbucket">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="box-project" data-index="6" class="box">
+            <div class="section-content">
+                <h2 class="sub-title">Project</h2>
+                <div class="detail">
+                    <!-- 오목 (omok) -->
+                    <div class="project">
+                        <span class="title">오목</span>
+                        <div class="thumbnail" data-project="omok">
+                            <span class="blur-area">
+                                <span class="name">더보기</span>
+                            </span>
+                            <img class="capture" src="./assets/images/index/project-capture/omok/icon-logo.png"
+                                 alt="Intellij">
+                        </div>
+                        <div class="project-info">
+                            <div class="division">사용 언어</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-c.png"
+                                         alt="C">
+                                    <span class="desc">C</span>
+                                </div>
+                            </div>
+                            <div class="division">개발툴</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/tools/tool-visual-studio.png"
+                                         alt="visual studio">
+                                    <span class="desc">visual studio</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="explain">
+                            <li>콘솔 화면 내 색상을 적용하여 오목 게임 구현 하였습니다.</li>
+                            <li>한 콘솔에서 진행되는 2인용 오목 게임으로 승패가 결정된 이후 바로 다음 게임을 진행 할 수 있습니다.</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <span class="title">동네 날씨 예보</span>
+                        <div class="thumbnail" data-project="weather">
+                            <span class="blur-area">
+                                <span class="name">더보기</span>
+                            </span>
+                            <img class="capture" src="assets/images/index/project-capture/weather/icon-logo.png"
+                                 alt="Intellij">
+                        </div>
+                        <div class="project-info">
+                            <div class="division">사용 언어</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-java.png"
+                                         alt="Java">
+                                    <span class="desc">Java</span>
+                                </div>
+                            </div>
+                            <div class="division">개발툴</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/tools/tool-android-studio.png"
+                                         alt="android studio">
+                                    <span class="desc">android studio</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="explain">
+                            <li>지역 명칭과 위치 값은 Excel 파일을 파싱하여 동네별 위치정보를 가져왔습니다.</li>
+                            <li>공공데이터에서 제공하는 API를 통해 지역별 날씨 정보를 가져와서 3시간 단위로 다음날 까지의 날씨를 표출하였습니다.</li>
+                            <li>3시간 단위로 가져온 16개의 날씨 데이터는 스크롤 뷰를 통해 표출하였습니다.</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <span class="title">AVS</span>
+                        <div class="thumbnail" data-project="avs">
+                            <span class="blur-area">
+                                <span class="name">더보기</span>
+                            </span>
+                            <img class="capture" src="./assets/images/index/project-capture/avs/icon-logo.png"
+                                 alt="Intellij">
+                        </div>
+                        <div class="project-info">
+                            <div class="division">사용 언어</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-c.png"
+                                         alt="C">
+                                    <span class="desc">C</span>
+                                </div>
+                            </div>
+                            <div class="division">개발툴</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/tools/tool-arduino-ide.png"
+                                         alt="arduino IDE">
+                                    <span class="desc">arduino IDE</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/tools/tool-app-inventor.png"
+                                         alt="app Inventor">
+                                    <span class="desc">app Inventor</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="explain">
+                            <li>AVS(Automatic Ventilation System) : 자동 환기 시스템</li>
+                            <li>블루투스를 통해 아두이노에 연결된 미세먼지, 온도, 습도, 조도 센서등 값을 앱에서 확인합니다.</li>
+                            <li>사용자는 미세먼지 값을 보고 자동 환기(팬 작동) 시점을 정할 수 있습니다.</li>
+                            <li>사용자는 조도 값을 보고 블라인드 동작 시점을 정할 수 있습니다.</li>
+                            <li>아두이노에 연결된 SD카드로 해당 로그를 저장할 수 있습니다.</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <span class="title">VR - 도심속 퍼즐 찾기</span>
+                        <div class="thumbnail" data-project="vr">
+                            <span class="blur-area">
+                                <span class="name">더보기</span>
+                            </span>
+                            <img class="capture" src="./assets/images/index/project-capture/vr/icon-logo.png"
+                                 alt="Intellij">
+                        </div>
+                        <div class="project-info">
+                            <div class="division">사용 언어</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-c-sharp.png"
+                                         alt="C#">
+                                    <span class="desc">C#</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-js.png"
+                                         alt="Java Script">
+                                    <span class="desc">Java Script</span>
+                                </div>
+                            </div>
+                            <div class="division">개발툴</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/tools/tool-unity-hub.png"
+                                         alt="Unitiy Hub">
+                                    <span class="desc">Unitiy Hub</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="explain">
+                            <li>온라인 가상현실 콘텐츠 개발 과정을 비대면으로 참여하면서 만든 프로젝트 입니다.</li>
+                            <li>Unity와 Steam VR을 통해 팀 프로젝트로 개발 진행하였습니다.</li>
+                            <li>Unity Hub를 통해 건물, 차량, 퍼즐 오브젝트 생성하였습니다.</li>
+                            <li>움직이는 차들을 피하고 도심 속에서 랜덤으로 생성되는 퍼즐을 찾아 퍼즐틀에 모두 맞추면 게임 클리어.</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <span class="title">Taza</span>
+                        <div class="thumbnail" data-project="taza">
+                            <span class="blur-area">
+                                <span class="name">더보기</span>
+                            </span>
+                            <img class="capture" src="./assets/images/index/project-capture/taza/icon-logo.png"
+                                 alt="Intellij">
+                        </div>
+                        <div class="project-info">
+                            <div class="division">사용 언어</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-html.png"
+                                         alt="HTML">
+                                    <span class="desc">HTML</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-css.png"
+                                         alt="CSS">
+                                    <span class="desc">CSS</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-js.png"
+                                         alt="JavaScript">
+                                    <span class="desc">JavaScript</span>
+                                </div>
+                            </div>
+                            <div class="division">개발툴</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/tools/tool-intellij.png"
+                                         alt="Intellij">
+                                    <span class="desc">Intellij</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="explain">
+                            <li>kakao map, 길찾기 api를 사용하여 지도 영역에 출발지, 도착지, 경로 표출하였습니다.</li>
+                            <li>kakao pay api 사용하여 가상 결제 추가하였습니다.</li>
+                            <li>localStorage를 통해 길찾기 이력 저장하여 표출하였습니다.</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <span class="title">식당 찾기</span>
+                        <div class="thumbnail" data-project="restaurant">
+                            <span class="blur-area">
+                                <span class="name">더보기</span>
+                            </span>
+                            <img class="capture" src="./assets/images/index/project-capture/restaurant/icon-logo.png"
+                                 alt="Intellij">
+                        </div>
+                        <div class="project-info">
+                            <div class="division">사용 언어</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-html.png"
+                                         alt="HTML">
+                                    <span class="desc">HTML</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-css.png"
+                                         alt="CSS">
+                                    <span class="desc">CSS</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-js.png"
+                                         alt="JavaScript">
+                                    <span class="desc">JavaScript</span>
+                                </div>
+                            </div>
+                            <div class="division">개발툴</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/tools/tool-intellij.png"
+                                         alt="Intellij">
+                                    <span class="desc">Intellij</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="explain">
+                            <li>kakao search api를 통해 지역 또는 키워드에 따라 식당 리스트 표출합니다.</li>
+                            <li>상세보기를 선택한 가게의 위치와 주변 주차장, 지하철 역 정보 표출합니다.</li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <span class="title">EMS</span>
+                        <div class="thumbnail" data-project="ems">
+                            <span class="blur-area">
+                                <span class="name">더보기</span>
+                            </span>
+                            <img class="capture" src="./assets/images/index/project-capture/ems/icon-logo.png"
+                                 alt="Intellij">
+                        </div>
+                        <div class="project-info">
+                            <div class="division">사용 언어</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-html.png"
+                                         alt="HTML">
+                                    <span class="desc">HTML</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-css.png"
+                                         alt="CSS">
+                                    <span class="desc">CSS</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-js.png"
+                                         alt="JavaScript">
+                                    <span class="desc">JavaScript</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-spring-boot.png"
+                                         alt="Spring Boot">
+                                    <span class="desc">Spring Boot</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-mariadb.png"
+                                         alt="MariaDB">
+                                    <span class="desc">MariaDB</span>
+                                </div>
+                            </div>
+                            <div class="division">개발툴</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/tools/tool-intellij.png"
+                                         alt="Intellij">
+                                    <span class="desc">Intellij</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="explain">
+                            <li>EMS(Exercise Management System) : 운동 관리 시스템으로 회원 가입을 한 유저를 대상으로 운동, 식단, 인바디 정보들의 관리를 도와주는 웹 기반 서비스 입니다.</li>
+                            <li>4인 팀프로젝트의 팀장으로 참여하여, 프로젝트 초기 단계에서 전체적인 디렉터리 구조와 데이터베이스 테이블 설계를 하였습니다.</li>
+                            <li>프로젝트 진행에 앞서 선행 작업이 필요한 부분들을 사전에 파악하고, 각 단계별로 역할을 분담한 뒤 전체 작업 순서를 공유함으로써 프로젝트가 효율적으로 진행될 수 있도록 주도적으로 기획했습니다.</li>
+                            <li>프로젝트에서는 회원 관련 기능 개발을 맡아, 로그인 및 회원가입 로직 구현뿐 아니라 DB 설계와 유효성 검증, 프론트엔드와의 연동 작업까지 전반적인 흐름을 담당하였습니다.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+
+<footer id="footer">
+    <p class="info">Author : Kim GeonHo</p>
+    <p class="info">Last Updated : March 31, 2025</p>
+    <p class="info">&copy; All rights reserved.</p>
+</footer>
+</body>
+
+
+<script>
+
+</script>
+</html>

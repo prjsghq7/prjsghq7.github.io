@@ -1,0 +1,82 @@
+@charset "UTF-8";
+/* Poppins 폰트 : 영문 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Noto Sans Korean 폰트 : 한글 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+/* Montserrat : 영문 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* black theme */
+    --body-background: #0a0e13;
+
+    --header-background: #0a0e13c0;
+    --header-scroll-backround: #dadada;
+    --header-text: #ffffff;
+    --header-border: #1a2633;
+
+    --section-background: #0a0e13;
+    --section-accent-text: #ffffff;
+    --section-main-text: #b5b5b5;
+    --section-sub-text: #b5b5b5;
+    --section-group-border: #1a2633;
+
+    --dialog-background: #222222;
+    --dialog-border: #757575;
+    --dialog-text: #d6d6d6;
+
+    --footer-background: #0a0e13;
+    --footer-text: #ffffff;
+    --footer-border: #10161f;
+
+    --point-color-intro: #0a0e13;
+    --point-color-about: #0a0e13;
+    --point-color-education: #0a0e13;
+    --point-color-certificate: #0a0e13;
+    --point-color-career: #0a0e13;
+    --point-color-tech: #0a0e13;
+    --point-color-project: #0a0e13;
+
+    --point-pastel-color-intro: #ff3b30;
+    --point-pastel-color-about: #ffa500;
+    --point-pastel-color-education: #ffff00;
+    --point-pastel-color-certificate: #008000;
+    --point-pastel-color-career: #0000ff;
+    --point-pastel-color-tech: #000080;
+    --point-pastel-color-project: #800080;
+
+    --invert: 1.0;
+}
+
+body {
+    font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+button, input, select, textarea {
+    background-color: initial;
+    color: inherit;
+    font: inherit;
+
+    border: none;
+    outline: none;
+
+    margin: initial;
+    margin-block: initial;
+    margin-inline: initial;
+
+    padding: initial;
+    padding-block: initial;
+    padding-inline: initial;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}

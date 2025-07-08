@@ -1,0 +1,173 @@
+#main > .section-container > #box-project > .section-content > .detail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.125rem 1.5rem;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9375rem;
+    justify-content: flex-start;
+
+    /*border: 0.0625rem solid var(--section-group-border);*/
+    border-radius: 0.5rem;
+    padding: 1.25rem 1rem;
+    box-sizing: border-box;
+
+    box-shadow:
+            inset 0 0 0 0.0625rem var(--section-group-border),
+            0.25rem 0.375rem 0.5rem #12161d,
+            inset 0 0.125rem 0 #ffffff1a,
+            inset 0 -0.25rem 0.125rem #00000055;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .title {
+    font-size: 2.125rem;
+    color: var(--section-main-text);
+    font-weight: 700;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .thumbnail {
+    width: 100%;
+    height: 12.5rem;
+
+    position: relative;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .thumbnail > .blur-area {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    background-color: #1E1C1C99;
+
+    opacity: 0;
+    backdrop-filter: blur(0);
+
+    transition-duration: 200ms;
+    transition-property: opacity, backdrop-filter;
+    transition-timing-function: ease;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .thumbnail:hover > .blur-area {
+    opacity: 1;
+    backdrop-filter: blur(0.5rem);
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .thumbnail:hover > .blur-area  > .name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--section-accent-text);
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .thumbnail > .capture {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .project-info {
+    grid-auto-flow: column;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 0.5rem 1rem;
+}
+
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .project-info > .division {
+    font-size: 1.25rem;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .project-info > .img-container {
+    height: 3.25rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .project-info > .img-container > .icon-area {
+    position: relative;
+    height: 90%;
+    object-fit: contain;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 0.75rem;
+    padding: 0.25rem;
+    box-sizing: border-box;
+
+    box-shadow:
+            inset 0 0 0 0.0625rem var(--section-group-border),
+            0.25rem 0.375rem 0.5rem #12161d,
+            inset 0 0.125rem 0 #ffffff1a,
+            inset 0 -0.25rem 0.125rem #00000055;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .project-info > .img-container > .icon-area > .icon {
+    height: 100%;
+    width: 100%;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .project-info > .img-container > .icon-area > .desc {
+    position: absolute;
+    top: 0.375rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    opacity: 0;
+    transition-duration: 400ms;
+    transition-property: top, opacity;
+    transition-timing-function: ease-out;
+
+    text-wrap: nowrap;
+    font-weight: 600;
+    font-size: 0.875rem;
+
+
+    background-color: #f8f9faaf;
+    color: #151e2a;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.5625rem;
+
+    z-index: 2;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .project-info > .img-container > .icon-area:hover > .desc {
+    top: -0.375rem;
+    opacity: 1;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .explain {
+    padding-left: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .explain > li {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.0625rem;
+    line-height: 1.25rem;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .explain > li::marker {
+    content: "- ";
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+/* 43rem 부터 1열로 표출*/
+@media (max-width: 43rem) {
+    #main > .section-container > #box-project > .section-content > .detail {
+        grid-template-columns: 1fr
+    }
+}

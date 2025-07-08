@@ -1,0 +1,89 @@
+@import "./index/header.css";
+@import "./index/main.css";
+@import "./index/footer.css";
+@import "./index/dialog.css";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--body-background);
+
+    /*padding: 0 1rem;*/
+}
+
+#topAnchor {
+    right: 1.25rem;
+    bottom: 8rem;
+    width: 2.75rem;
+    height: 2.75rem;
+
+    /*background-color: #ffffff;*/
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    transition-duration: 400ms;
+    transition-property: bottom, opacity;
+    transition-timing-function: ease;
+    z-index: 1;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    border: 0.25rem solid #000000;
+    border-radius: 1.75rem;
+    overflow: hidden;
+}
+
+#topAnchor.visible {
+    bottom: 6rem;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#topAnchor > .icon {
+    height: 90%;
+    transform: scale(1);
+    transition-duration: 250ms;
+    transition-property: transform;
+    transition-timing-function: ease;
+
+    filter: invert(var(--invert));
+}
+
+#topAnchor:hover > .icon {
+    transform: scale(1.1);
+}
+
+#changeTheme {
+    right: 1.25rem;
+    bottom: 2rem;
+    width: 2.75rem;
+    height: 2.75rem;
+
+    /*background-color: #ffffff;*/
+    cursor: pointer;
+    position: fixed;
+    z-index: 1;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    border: 0.25rem solid #000000;
+    border-radius: 1.75rem;
+    overflow: hidden;
+}
+
+#changeTheme > .icon {
+    height: 90%;
+    transform: scale(1);
+    transition-duration: 250ms;
+    transition-property: transform;
+    transition-timing-function: ease;
+}

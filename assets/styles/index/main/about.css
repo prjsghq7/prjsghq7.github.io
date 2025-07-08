@@ -1,0 +1,102 @@
+/* About area */
+#main > .section-container > #box-about > .section-content > .detail {
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: space-around;
+}
+
+#main > .section-container > #box-about > .section-content > .detail > .profile-area {
+    width: 17rem;
+    height: 17rem;
+    border-radius: 50%;
+    border: 0.1875rem solid var(--section-group-border);
+    box-sizing: border-box;
+    overflow: hidden;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main > .section-container > #box-about > .section-content > .detail > .profile-area > .img-profile {
+    margin-top: 2.75rem;
+    width: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+#main > .section-container > #box-about > .section-content > .detail > .img-profile:hover {
+    /*content: url('../../../images/index/main/profile-good.png');*/
+}
+
+#main > .section-container > #box-about > .section-content > .detail > .profile-data {
+    /*align-items: flex-start;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*gap: 0.5rem;*/
+    /*justify-content: center;*/
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem 0.625rem;
+    align-items: center;
+}
+#main > .section-container > #box-about > .section-content > .detail > .profile-data > .info {
+    font-weight: 600;
+    font-size: 1.4375rem;
+}
+
+#main > .section-container > #box-about > .section-content > .detail > .profile-data > .icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: contain;
+    filter: invert(var(--invert));
+}
+
+#main > .section-container > #box-about > .section-content > .detail > .profile-data > .desc {
+    height: auto;
+    font-size: 1.4375rem;
+    font-weight: 500;
+    color: var(--section-sub-text);
+    display: inline-block;
+}
+
+/* 모바일 가로 & 태블릿 세로 (해상도 481px ~ 768px)  768px -> 48rem*/
+@media (max-width: 48rem) {
+    #main > .section-container > #box-about > .section-content > .detail > .profile-data > .desc {
+        height: auto;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: var(--section-sub-text);
+        display: inline-block;
+    }
+}
+
+@media (max-width: 36rem) {
+    #main > .section-container > #box-about > .section-content > .detail {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+/*모바일 세로 ( ~ 480px) 480px -> 30rem */
+@media (max-width: 30rem) {
+    #main > .section-container > #box-about > .section-content > .detail {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    #main > .section-container > #box-about > .section-content > .detail > .profile-data {
+        width: 50%;
+    }
+}
