@@ -1,119 +1,94 @@
-const projectCaptureCount = {
-    'omok': 3,
-    'weather': 6,
-    'avs': 7,
-    'vr': 7,
-    'taza': 10,
-    'restaurant': 5,
-    'ems': 11
+const BASES = [
+    "/assets/images/index/project-capture/",  // 절대 경로
+    "./assets/images/index/project-capture/"  // 상대 경로 백업
+];
+const EXTENSIONS = ["png", "jpg", "jpeg", "webp"];
+const MAX_COUNT = 50;
+
+const $captureDialog = document.getElementById("captureDialog");
+const $captureList = $captureDialog.querySelector(".capture-list");
+const $btnClose = $captureDialog.querySelector(".capture-close");
+const $thumbnails = document.getElementById('box-project').querySelectorAll('div.thumbnail');
+
+
+const showDialogNow = () => {
+    try {
+        $captureDialog.showModal();
+    } catch {
+        $captureDialog.setAttribute("open", "");
+    }
 };
 
-const projectTitle = {
-    'omok': '오목',
-    'weather': '동네 날씨 예보',
-    'avs': 'AVS',
-    'vr': 'VR - 도심속 퍼즐 찾기',
-    'taza': 'Taza - 택시 호출',
-    'restaurant': '식당 찾기',
-    'ems': 'EMS - 운동 일지 관리 시스템'
+const closeDialog = () => {
+    if ($captureDialog.open) $captureDialog.close();
+    $captureList.innerHTML = "";
 };
 
-const $boxProject = document.getElementById('box-project');
-const $thumbnails = $boxProject.querySelectorAll('.thumbnail');
-
-const $dialog = document.getElementById('dialog-project');
-const $btnClose = $dialog.querySelector(':scope > .button-close');
-const $title = $dialog.querySelector(':scope > .title');
-const $blurBackground = document.getElementById('dialog-blur-area');
-
-const updateProjectDialog = (projectName) => {
-    $title.innerText = projectTitle[projectName];
-
-    const captureCount = projectCaptureCount[projectName];
-
-    const $captureSlide = $dialog.querySelector(':scope > .capture-slide');
-    $captureSlide.querySelectorAll(':scope > .capture').forEach($capture => {
-        $capture.remove();
-    });
-    const $controller = $captureSlide.querySelector(':scope > .controller');
-    for (let index = 1; index <= captureCount; index++) {
-        const img = document.createElement('img');
-        img.classList.add('capture');
-
-        if (index === 1) {
-            img.classList.add('visible');
-        }
-
-        img.src = `./assets/images/index/project-capture/${projectName}/${projectName}-${index}.png`;
-        img.alt = `capture${index}`;
-        img.setAttribute('data-value', index);
-
-        $controller.before(img);
+const renderImages = (srcList) => {
+    $captureList.innerHTML = "";
+    for (const src of srcList) {
+        const img = document.createElement("img");
+        img.src = src;
+        $captureList.appendChild(img);
     }
+};
 
-    $controller.querySelectorAll(':scope > .label').forEach($label => {
-        $label.remove();
-    });
-    for (let index = 1; index <= captureCount; index++) {
-        const $label = document.createElement('label');
-        $label.classList.add('label');
+const loadUrl = (src) => new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(src);
+    img.onerror = () => reject(src);
+    img.src = src;
+});
 
-        const $input = document.createElement('input');
-        $input.classList.add('radio');
-        $input.type = 'radio';
-        $input.name = 'step';
-        $input.value = index;
-        if (index === 1) {
-            $input.checked = true;
-        }
-
-        const $span = document.createElement('span');
-        $span.classList.add('knob');
-
-        $label.appendChild($input);
-        $label.appendChild($span);
-
-        $controller.append($label);
-    }
-
-
-    const $radioButtons = $dialog.querySelectorAll('.controller .radio');
-    const $captures = $dialog.querySelectorAll('.capture');
-    // radio 버튼 클릭 시 이미지 변경
-    $radioButtons.forEach(($radioButton) => {
-        $radioButton.addEventListener('change', (event) => {
-            $captures.forEach(($capture) => {
-                $capture.classList.remove('visible');
-            });
-
-            const selectedValue = event.target.value;
-            $captureSlide.querySelector(`:scope > .capture[data-value="${selectedValue}"]`).classList.add('visible');
+const loadProjectImageAtIndex = (project, i) => {
+    const tried = [];
+    let chain = Promise.reject();                 // 첫 시도 트리거
+    BASES.forEach((base) => {
+        EXTENSIONS.forEach((ext) => {
+            const url = `${base}${project}/${project}-${i}.${ext}`;
+            tried.push(url);
+            chain = chain.catch(() => loadUrl(url));  // 실패하면 다음 URL 시도
         });
     });
-}
-
-const showProjectDialog = (projectName) => {
-    document.body.style.overflow = 'hidden';
-
-    updateProjectDialog(projectName);
-
-    $dialog.classList.add('visible');
-    $blurBackground.classList.add('visible');
+    return chain.then((okUrl) => ({ok: okUrl, tried}))
+        .catch(() => ({ok: null, tried}));
 };
 
-const hideProjectDialog = () => {
-    document.body.style.overflow = 'auto';
-
-    $dialog.classList.remove('visible');
-    $blurBackground.classList.remove('visible');
-}
-
-$btnClose.addEventListener('click', hideProjectDialog);
-$blurBackground.addEventListener('click', hideProjectDialog);
+const loadProjectImages = (project, max = MAX_COUNT) => {
+    const found = [];
+    const triedAll = [];
+    let chain = Promise.resolve();
+    for (let i = 1; i <= max; i++) {
+        chain = chain
+            .then(() => loadProjectImageAtIndex(project, i))
+            .then(({ok, tried}) => {
+                triedAll.push(...tried);
+                if (!ok) return Promise.reject(new Error("STOP"));
+                found.push(ok);
+            });
+    }
+    return chain.then(() => ({found, triedAll}))
+        .catch(() => ({found, triedAll}));
+};
 
 $thumbnails.forEach(($thumbnail) => {
-    $thumbnail.addEventListener('click', (e) => {
-        const projectName = e.currentTarget.dataset.project;
-        showProjectDialog(projectName);
+    $thumbnail.addEventListener("click", (e) => {
+        const project = $thumbnail.dataset.project;
+
+        renderImages([]);
+        showDialogNow();
+
+        loadProjectImages(project).then(({found}) => {
+            renderImages(found);
+        });
     });
+});
+
+$btnClose.addEventListener("click", closeDialog);
+$captureDialog.addEventListener("cancel", (e) => {
+    e.preventDefault();
+    closeDialog();
+});
+$captureDialog.addEventListener("click", (e) => {
+    if (e.target === $captureDialog) closeDialog();
 });

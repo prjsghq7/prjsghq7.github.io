@@ -15,7 +15,8 @@ body {
 
 #topAnchor {
     right: 1.25rem;
-    bottom: 8rem;
+    /*bottom: 8rem;*/
+    bottom: 0;
     width: 2.75rem;
     height: 2.75rem;
 
@@ -40,7 +41,8 @@ body {
 }
 
 #topAnchor.visible {
-    bottom: 6rem;
+    /*bottom: 6rem;*/
+    bottom: 2rem;
     opacity: 1;
     pointer-events: auto;
 }

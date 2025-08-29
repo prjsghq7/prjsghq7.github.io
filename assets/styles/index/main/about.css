@@ -65,6 +65,9 @@
     font-weight: 500;
     color: var(--section-sub-text);
     display: inline-block;
+
+    user-select: text;
+    cursor: text;
 }
 
 /* 모바일 가로 & 태블릿 세로 (해상도 481px ~ 768px)  768px -> 48rem*/

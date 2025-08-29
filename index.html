@@ -17,37 +17,20 @@
     <script defer src="assets/scripts/keyword.js"></script>
 </head>
 <body>
-<div id="dialog-blur-area" class=""></div>
-<div id="dialog-project" class="">
-    <button class="button-close">
-        <img class="icon" src="./assets/images/index/dialog/icon-close.png" alt="close">
-    </button>
-    <span class="title">AVS</span>
 
-    <div class="capture-slide">
-        <img class="capture visible" src="./assets/images/index/project-capture/avs/avs-1.png" alt="capture1"
-             data-value="1">
-        <img class="capture" src="./assets/images/index/project-capture/avs/avs-2.png" alt="capture2" data-value="2">
-
-        <div class="controller">
-            <label class="label">
-                <input class="radio" checked name="step" type="radio" value="1">
-                <span class="knob"></span>
-            </label>
-            <label class="label">
-                <input class="radio" name="step" type="radio" value="2">
-                <span class="knob"></span>
-            </label>
-        </div>
+<dialog id="captureDialog" class="capture-dialog">
+    <div class="capture-shell">
+        <button type="button" class="capture-close" aria-label="닫기">×</button>
+        <div class="capture-list"></div>
     </div>
-</div>
+</dialog>
 
 <a id="topAnchor" href="#box-intro" class="visible">
     <img class="icon" src="assets/images/index/main/icon-chevron-up.png" alt="up-squared">
 </a>
-<a id="changeTheme" class="visible">
-    <img class="icon" src="assets/images/icon-dark-theme.png" alt="change-theme">
-</a>
+<!--<a id="changeTheme" class="visible">-->
+<!--    <img class="icon" src="assets/images/icon-dark-theme.png" alt="change-theme">-->
+<!--</a>-->
 
 <header id="header">
     <div class="scroll-area">
@@ -105,21 +88,19 @@
                         <img class="img-profile" src="./assets/images/index/main/profile-web.jpg" alt="profile">
                     </div>
                     <div class="profile-data">
-<!--                        <span class="info">이름</span>-->
                         <img class="icon" src="./assets/images/index/about/icon-name.png" alt="이름">
                         <span class="desc">김건호</span>
 
-<!--                        <span class="info">생년월일</span>-->
                         <img class="icon" src="./assets/images/index/about/icon-birth.png" alt="생년월일">
                         <span class="desc">1996.02.06</span>
 
-<!--                        <span class="info">전화번호</span>-->
                         <img class="icon" src="./assets/images/index/about/icon-phone.png" alt="전화번호">
                         <span class="desc">010-9262-5734</span>
 
-<!--                        <span class="info">이메일 주소</span>-->
                         <img class="icon" src="./assets/images/index/about/icon-email.png" alt="이메일 주소">
                         <span class="desc">prjsghq7@naver.com</span>
+                        <img class="icon" src="./assets/images/index/about/icon-github.png" alt="github 주소">
+                        <span class="desc">github.com/prjsghq7</span>
                     </div>
                 </div>
             </div>
@@ -521,7 +502,6 @@
             <div class="section-content">
                 <h2 class="sub-title">Project</h2>
                 <div class="detail">
-                    <!-- 오목 (omok) -->
                     <div class="project">
                         <span class="title">오목</span>
                         <div class="thumbnail" data-project="omok">
@@ -806,6 +786,121 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="project">
+                        <span class="title">Re:Book</span>
+                        <div class="thumbnail" data-project="rebook">
+                            <span class="blur-area">
+                                <span class="name">더보기</span>
+                            </span>
+                            <img class="capture" src="./assets/images/index/project-capture/rebook/icon-logo.png">
+                        </div>
+                        <div class="project-info">
+                            <div class="division">사용 언어</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-html.png"
+                                         alt="HTML">
+                                    <span class="desc">HTML</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-css.png"
+                                         alt="CSS">
+                                    <span class="desc">CSS</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-js.png"
+                                         alt="JavaScript">
+                                    <span class="desc">JavaScript</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-spring-boot.png"
+                                         alt="Spring Boot">
+                                    <span class="desc">Spring Boot</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-mariadb.png"
+                                         alt="MariaDB">
+                                    <span class="desc">MariaDB</span>
+                                </div>
+                            </div>
+                            <div class="division">개발툴</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/tools/tool-intellij.png"
+                                         alt="Intellij">
+                                    <span class="desc">Intellij</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="explain">
+                            <li class="link">
+                                <a href="https://rebook.kimgh.dev/" target="_blank">프로젝트 사이트 바로가기</a>
+                            </li>
+                            <li>Re:Book(Review Book) : 독서 경험을 공유하고 리뷰를 기반으로 책을 추천받을 수 있는 웹 플랫폼입니다. 사용자는 책을 검색하고 리뷰를 작성하며, 별점 평가와 즐겨찾기 기능을 통해 개인 맞춤형 독서 경험을 누릴 수 있습니다.</li>
+                            <li>3인 팀 프로젝트로 참여하였으며, 회원 관리 및 도서 상세,리뷰와 관리자 통계를 담당하여 개발하였습니다.</li>
+                            <li>초기 단계에서는 Spring Boot와 MariaDB 기반의 데이터베이스 테이블을 직접 설계하고, OAuth 소셜 로그인과 Argon 암호화를 적용하여 보안성과 편의성을 강화했습니다.</li>
+                            <li>통계 데이터가 시각화될 수 있도록 API와 차트 연동 로직을 구현했습니다.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="project">
+                        <span class="title">알리온</span>
+                        <div class="thumbnail" data-project="alleon">
+                            <span class="blur-area">
+                                <span class="name">더보기</span>
+                            </span>
+                            <img class="capture" src="./assets/images/index/project-capture/alleon/icon-logo.png">
+                        </div>
+                        <div class="project-info">
+                            <div class="division">사용 언어</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-html.png"
+                                         alt="HTML">
+                                    <span class="desc">HTML</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-css.png"
+                                         alt="CSS">
+                                    <span class="desc">CSS</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-js.png"
+                                         alt="JavaScript">
+                                    <span class="desc">JavaScript</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-spring-boot.png"
+                                         alt="Spring Boot">
+                                    <span class="desc">Spring Boot</span>
+                                </div>
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/skills/skill-mariadb.png"
+                                         alt="MariaDB">
+                                    <span class="desc">MariaDB</span>
+                                </div>
+                            </div>
+                            <div class="division">개발툴</div>
+                            <div class="img-container">
+                                <div class="icon-area">
+                                    <img class="icon" src="./assets/images/index/tools/tool-intellij.png"
+                                         alt="Intellij">
+                                    <span class="desc">Intellij</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="explain">
+                            <li class="link">
+                                <a href="https://alleon.kimgh.dev/" target="_blank">프로젝트 사이트 바로가기</a>
+                            </li>
+                            <li>2025 오픈소스 개발자대회 출품작으로, 공공데이터 활용과 오픈소스 기여를 목표로 개발되었습니다.</li>
+                            <li>All-e-on : 사회적 약자를 위한 맞춤형 복지 정보 플랫폼으로, 공공데이터 API를 연동해 개인이 필요로 하는 복지 서비스와 정책을 한눈에 확인할 수 있는 웹 기반 서비스입니다.</li>
+                            <li>5인 팀 프로젝트로 참여하였으며, 프로젝트 전반의 역할 분배와 일정 조율을 맡아 협업이 원활하게 진행될 수 있도록 주도했습니다.</li>
+                            <li>Spring Boot와 MariaDB 기반으로 데이터베이스 테이블을 직접 설계하고, 전체적인 프로젝트 구조를 잡아 초기 개발 환경을 마련했습니다.</li>
+                            <li>공공 복지 API 데이터를 수집하고 파싱하여 서비스에 적용했으며, 사용자에게 맞춤형 복지 정보를 제공할 수 있도록 데이터 흐름을 구현했습니다.</li>
+                            <li>게시글 및 댓글 CRUD 기능을 개발하여 커뮤니티 기능을 담당했습니다.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -815,7 +910,7 @@
 
 <footer id="footer">
     <p class="info">Author : Kim GeonHo</p>
-    <p class="info">Last Updated : March 31, 2025</p>
+    <p class="info">Last Updated : August 29, 2025</p>
     <p class="info">&copy; All rights reserved.</p>
 </footer>
 </body>

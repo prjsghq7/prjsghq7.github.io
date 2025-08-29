@@ -54,6 +54,8 @@
     align-items: center;
     display: flex;
     justify-content: center;
+
+    cursor: pointer;
 }
 
 #main > .section-container > #box-project > .section-content > .detail > .project > .thumbnail:hover > .blur-area {
@@ -157,6 +159,24 @@
     padding: 0.25rem 0.5rem;
     font-size: 1.0625rem;
     line-height: 1.25rem;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .explain > li.link > a {
+    font-size: 1.0625rem;
+    line-height: 1.25rem;
+    text-decoration: none;
+    color: var(--section-link-text);
+
+    cursor: pointer;
+
+    transition-property: color;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+}
+
+#main > .section-container > #box-project > .section-content > .detail > .project > .explain > li.link > a:hover {
+    color: var(--section-link-hover);
+    text-decoration: underline;
 }
 
 #main > .section-container > #box-project > .section-content > .detail > .project > .explain > li::marker {

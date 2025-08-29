@@ -6,6 +6,8 @@
 /* Montserrat : 영문 폰트 */
 @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import "./index.css";
+
 :root {
     /* black theme */
     --body-background: #0a0e13;
@@ -19,6 +21,8 @@
     --section-accent-text: #ffffff;
     --section-main-text: #b5b5b5;
     --section-sub-text: #b5b5b5;
+    --section-link-text: #8ab4f8;
+    --section-link-hover: #5a95f5;
     --section-group-border: #1a2633;
 
     --dialog-background: #222222;
