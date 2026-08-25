@@ -84,17 +84,6 @@ const projects={"rebook": {"title": "Re:Book", "subtitle": "독서 리뷰 및 �
       return;
     }
 
-    if (event.key === "ArrowLeft" && prevButton) {
-      event.preventDefault();
-      prevButton.click();
-      return;
-    }
-
-    if (event.key === "ArrowRight" && nextButton) {
-      event.preventDefault();
-      nextButton.click();
-      return;
-    }
 
     if (event.key !== "Tab") return;
 
