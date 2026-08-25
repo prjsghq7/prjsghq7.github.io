@@ -154,3 +154,217 @@ html[data-theme="dark"] .gallery-controls{background:var(--paper)}
 @media(max-width:560px){
   .gallery-stage{height:auto;min-height:140px}
 }
+
+
+/* Keyboard accessibility refinement */
+.keyboard-guide {
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .16s ease;
+}
+
+.project-open {
+  position: relative;
+}
+
+.project-keyboard-guide {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  z-index: 5;
+  transform: translateX(-50%);
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--text);
+  font: 700 10px Manrope, "Noto Sans KR", sans-serif;
+  white-space: nowrap;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, .10);
+}
+
+.project-open:focus-visible .project-keyboard-guide {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dialog-keyboard-guide {
+  margin: 8px 0 0;
+  text-align: center;
+  color: var(--muted);
+  font: 700 10px Manrope, "Noto Sans KR", sans-serif;
+}
+
+dialog.keyboard-mode .dialog-keyboard-guide {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .keyboard-guide {
+    transition: none;
+  }
+}
+
+
+/* Tech stack keyboard/mouse focus state */
+.skill-item:focus,
+.skill-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.skill-item:focus img,
+.skill-item:focus-visible img {
+  transform: translateY(-2px);
+}
+
+
+/* Final theme toggle: sunset / sunrise preview */
+#theme-toggle {
+  position: relative;
+  width: 86px;
+  height: 36px;
+  padding: 0;
+  overflow: hidden;
+  color: #9a3e2b;
+  background: #fbf3e8;
+  border-color: #d8b6a7;
+  transition:
+    background-color .28s ease,
+    border-color .28s ease,
+    color .28s ease;
+}
+
+html[data-theme="dark"] #theme-toggle {
+  color: #b7ff4a;
+  background: #151b22;
+  border-color: #52613d;
+}
+
+#theme-toggle .theme-state {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font: 800 10px/1 Manrope, "Noto Sans KR", sans-serif;
+  letter-spacing: .07em;
+  white-space: nowrap;
+  transition:
+    transform .28s cubic-bezier(.22,.72,.24,1),
+    opacity .22s ease;
+}
+
+#theme-toggle .theme-state-icon {
+  width: 19px;
+  height: 19px;
+  display: grid;
+  place-items: center;
+}
+
+#theme-toggle .theme-state svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+/* LIGHT current state */
+html:not([data-theme="dark"]) #theme-toggle .theme-state-light {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html:not([data-theme="dark"]) #theme-toggle .theme-state-night {
+  opacity: 0;
+  transform: translateY(7px);
+}
+
+/* Preview NIGHT: sun sets, moon rises, button itself becomes night-colored. */
+html:not([data-theme="dark"]) #theme-toggle:hover,
+html:not([data-theme="dark"]) #theme-toggle:focus-visible {
+  color: #59677a;
+  background: #eee7dc;
+  border-color: #b8afa3;
+}
+
+html:not([data-theme="dark"]) #theme-toggle:hover .theme-state-light,
+html:not([data-theme="dark"]) #theme-toggle:focus-visible .theme-state-light {
+  opacity: 0;
+  transform: translateY(7px);
+}
+
+html:not([data-theme="dark"]) #theme-toggle:hover .theme-state-night,
+html:not([data-theme="dark"]) #theme-toggle:focus-visible .theme-state-night {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* NIGHT current state */
+html[data-theme="dark"] #theme-toggle .theme-state-night {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html[data-theme="dark"] #theme-toggle .theme-state-light {
+  opacity: 0;
+  transform: translateY(7px);
+}
+
+/* Preview LIGHT: moon sets, sun rises, button itself becomes light-colored. */
+html[data-theme="dark"] #theme-toggle:hover,
+html[data-theme="dark"] #theme-toggle:focus-visible {
+  color: #f0b56f;
+  background: #24282b;
+  border-color: #596068;
+}
+
+html[data-theme="dark"] #theme-toggle:hover .theme-state-night,
+html[data-theme="dark"] #theme-toggle:focus-visible .theme-state-night {
+  opacity: 0;
+  transform: translateY(7px);
+}
+
+html[data-theme="dark"] #theme-toggle:hover .theme-state-light,
+html[data-theme="dark"] #theme-toggle:focus-visible .theme-state-light {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* No shake/rotation. Click simply confirms the state being previewed. */
+#theme-toggle:active .theme-state {
+  transition-duration: .10s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #theme-toggle,
+  #theme-toggle .theme-state {
+    transition: none;
+  }
+
+  html:not([data-theme="dark"]) #theme-toggle:hover .theme-state-light,
+  html:not([data-theme="dark"]) #theme-toggle:focus-visible .theme-state-light,
+  html[data-theme="dark"] #theme-toggle:hover .theme-state-night,
+  html[data-theme="dark"] #theme-toggle:focus-visible .theme-state-night {
+    transform: none;
+  }
+
+  html:not([data-theme="dark"]) #theme-toggle:hover .theme-state-night,
+  html:not([data-theme="dark"]) #theme-toggle:focus-visible .theme-state-night,
+  html[data-theme="dark"] #theme-toggle:hover .theme-state-light,
+  html[data-theme="dark"] #theme-toggle:focus-visible .theme-state-light {
+    transform: none;
+  }
+}

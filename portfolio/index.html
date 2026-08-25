@@ -1,399 +1,125 @@
-<!doctype html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="개발자 김건호의 포트폴리오">
-    <title>김건호 | Developer Portfolio</title>
-    <link rel="icon" type="image/png" href="./assets/images/brand/k-maze.png">
-    <link rel="stylesheet" href="./assets/styles/style.css">
-    <script defer src="./assets/scripts/app.js"></script>
-    <script defer src="./assets/scripts/theme.js"></script>
-    <script defer src="./assets/scripts/project-dialog.js"></script>
-</head>
-<body>
-<a class="skip" href="#main">본문 바로가기</a>
-<header class="header"><a class="brand" href="#top"><span class="brand-mark"><img src="./assets/images/brand/k-maze.png"
-                                                                                  alt=""></span><span>KIM GEONHO</span></a>
-    <div class="header-actions">
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 테마로 변경" title="테마 변경"><span
-                class="theme-icon" aria-hidden="true">◐</span><span class="theme-label">DARK</span></button>
-        <button class="menu" type="button" aria-expanded="false" aria-controls="nav">MENU</button>
-    </div>
-    <nav id="nav"><a href="#strengths">Strengths</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a
-            href="#credentials">Credentials</a><a href="#stack">Stack</a></nav>
-</header>
-<main id="main">
-    <section class="hero" id="top">
-        <div class="hero-text"><p class="kicker">DEVELOPER PORTFOLIO / 2026</p>
-            <h1>문제를 구조화하고,<br><em>동작하는 결과로 만듭니다.</em></h1>
-            <p class="lead">웹, 앱, 내비게이션 개발 경험을 바탕으로 백엔드 개발 역량을 쌓아왔으며, 현재는 인프라, 네트워크, 보안까지 학습 영역을 확장하고 있습니다. 서비스 기능뿐 아니라
-                시스템이 동작하는 환경과 연결 구조까지 이해하는 개발자를 목표로 합니다.</p>
-            <div class="actions"><a class="primary" href="#projects">프로젝트 보기</a><a class="secondary"
-                                                                                   href="https://github.com/prjsghq7"
-                                                                                   target="_blank"
-                                                                                   rel="noopener noreferrer">GitHub
-                ↗</a></div>
-        </div>
-        <div class="core">
-            <article><i>01</i><b>문제 구조화</b>
-                <p>요구사항을 기능과 데이터 흐름으로 나누어 구현 순서를 정합니다.</p></article>
-            <article><i>02</i><b>개발 경험</b>
-                <p>웹, 앱, 내비게이션 환경에서 실제 기능을 구현해왔습니다.</p></article>
-            <article><i>03</i><b>기술 영역 확장</b>
-                <p>백엔드를 중심으로 인프라, 네트워크, 보안까지 시스템 전반을 학습하고 있습니다.</p></article>
-        </div>
-    </section>
-    <section class="section" id="strengths">
-        <div class="heading"><p class="kicker">STRENGTHS / S-A-R</p>
-            <h2>강점을 과정으로 설명합니다.</h2></div>
-        <div class="sar">
-            <article><h3>구조를 먼저 잡습니다.</h3>
-                <dl>
-                    <dt>Situation</dt>
-                    <dd>공공데이터 기반 팀 프로젝트의 초기 구조와 데이터 흐름이 필요했습니다.</dd>
-                    <dt>Action</dt>
-                    <dd>Spring Boot와 MariaDB 기준으로 테이블, 프로젝트 구조, API 수집 및 파싱 흐름을 구성했습니다.</dd>
-                    <dt>Result</dt>
-                    <dd>팀이 공통 구조 위에서 기능 개발을 이어가고 맞춤형 복지 정보 제공 기능으로 연결했습니다.</dd>
-                </dl>
-            </article>
-            <article><h3>데이터의 사용 지점까지 봅니다.</h3>
-                <dl>
-                    <dt>Situation</dt>
-                    <dd>회원, 도서, 리뷰와 관리자 통계를 하나의 서비스 흐름으로 연결해야 했습니다.</dd>
-                    <dt>Action</dt>
-                    <dd>DB와 API를 구성하고 리뷰와 통계 데이터를 실제 화면에서 사용할 수 있도록 연동했습니다.</dd>
-                    <dt>Result</dt>
-                    <dd>검색, 리뷰, 별점과 관리자 통계가 연결된 웹 서비스를 완성했습니다.</dd>
-                </dl>
-            </article>
-            <article><h3>연동 문제를 끝까지 추적합니다.</h3>
-                <dl>
-                    <dt>Situation</dt>
-                    <dd>내비게이션 기능에서 다른 서비스와 긴급 통화 상태 및 데이터를 주고받아야 했습니다.</dd>
-                    <dt>Action</dt>
-                    <dd>JSON 파싱과 Broadcast 메시지, API 가이드로 서비스 간 연동 기준을 맞췄습니다.</dd>
-                    <dt>Result</dt>
-                    <dd>여러 서비스가 동일한 긴급 통화 데이터를 사용할 수 있도록 연결했습니다.</dd>
-                </dl>
-            </article>
-        </div>
-    </section>
-    <section class="section" id="projects">
-        <div class="heading split">
-            <div><p class="kicker">PROJECT ARCHIVE</p>
-                <h2>Projects</h2></div>
-            <p>완성된 프로젝트와 학습 과정의 결과물을 함께 기록했습니다.<br>선택하면 실제 캡처와 상세 내용을 볼 수 있습니다.</p></div>
-        <div class="project-list">
-            <article class="project-card">
-                <button class="project-open" type="button" data-project="rebook" aria-haspopup="dialog"><span
-                        class="project-no">01</span><span class="project-thumb"><img
-                        src="./assets/images/projects/rebook/icon-logo.png" alt="" loading="lazy"></span><span
-                        class="project-copy"><strong>Re:Book</strong><small>독서 리뷰 및 추천 웹 플랫폼</small></span><span
-                        class="project-stack">HTML / CSS / JavaScript / Spring Boot / MariaDB</span><span
-                        class="project-arrow" aria-hidden="true">↗</span></button>
-            </article>
-            <article class="project-card">
-                <button class="project-open" type="button" data-project="alleon" aria-haspopup="dialog"><span
-                        class="project-no">02</span><span class="project-thumb"><img
-                        src="./assets/images/projects/alleon/icon-logo.png" alt="" loading="lazy"></span><span
-                        class="project-copy"><strong>알리온</strong><small>맞춤형 복지 정보 플랫폼</small></span><span
-                        class="project-stack">HTML / CSS / JavaScript / Spring Boot / MariaDB</span><span
-                        class="project-arrow" aria-hidden="true">↗</span></button>
-            </article>
-            <article class="project-card">
-                <button class="project-open" type="button" data-project="vr" aria-haspopup="dialog"><span
-                        class="project-no">03</span><span class="project-thumb"><img
-                        src="./assets/images/projects/vr/icon-logo.png" alt="" loading="lazy"></span><span
-                        class="project-copy"><strong>VR - 도심속 퍼즐 찾기</strong><small>가상현실 퍼즐 게임</small></span><span
-                        class="project-stack">C# / JavaScript / Unity / Steam VR</span><span class="project-arrow"
-                                                                                             aria-hidden="true">↗</span>
-                </button>
-            </article>
-            <article class="project-card">
-                <button class="project-open" type="button" data-project="omok" aria-haspopup="dialog"><span
-                        class="project-no">04</span><span class="project-thumb"><img
-                        src="./assets/images/projects/omok/icon-logo.png" alt="" loading="lazy"></span><span
-                        class="project-copy"><strong>오목</strong><small>콘솔 기반 2인용 오목</small></span><span
-                        class="project-stack">C / Visual Studio</span><span class="project-arrow"
-                                                                            aria-hidden="true">↗</span></button>
-            </article>
-            <article class="project-card">
-                <button class="project-open" type="button" data-project="weather" aria-haspopup="dialog"><span
-                        class="project-no">05</span><span class="project-thumb"><img
-                        src="./assets/images/projects/weather/icon-logo.png" alt="" loading="lazy"></span><span
-                        class="project-copy"><strong>동네 날씨 예보</strong><small>공공데이터 기반 Android 날씨 앱</small></span><span
-                        class="project-stack">Java / Android Studio / Public API</span><span class="project-arrow"
-                                                                                             aria-hidden="true">↗</span>
-                </button>
-            </article>
-            <article class="project-card">
-                <button class="project-open" type="button" data-project="avs" aria-haspopup="dialog"><span
-                        class="project-no">06</span><span class="project-thumb"><img
-                        src="./assets/images/projects/avs/icon-logo.png" alt="" loading="lazy"></span><span
-                        class="project-copy"><strong>AVS</strong><small>Automatic Ventilation System</small></span><span
-                        class="project-stack">C / Arduino / App Inventor</span><span class="project-arrow"
-                                                                                     aria-hidden="true">↗</span>
-                </button>
-            </article>
-            <article class="project-card">
-                <button class="project-open" type="button" data-project="taza" aria-haspopup="dialog"><span
-                        class="project-no">07</span><span class="project-thumb"><img
-                        src="./assets/images/projects/taza/icon-logo.png" alt="" loading="lazy"></span><span
-                        class="project-copy"><strong>Taza</strong><small>지도와 길찾기 기반 웹 프로젝트</small></span><span
-                        class="project-stack">HTML / CSS / JavaScript / Kakao API</span><span class="project-arrow"
-                                                                                              aria-hidden="true">↗</span>
-                </button>
-            </article>
-            <article class="project-card">
-                <button class="project-open" type="button" data-project="restaurant" aria-haspopup="dialog"><span
-                        class="project-no">08</span><span class="project-thumb"><img
-                        src="./assets/images/projects/restaurant/icon-logo.png" alt="" loading="lazy"></span><span
-                        class="project-copy"><strong>식당 찾기</strong><small>Kakao Search API 기반 식당 검색</small></span><span
-                        class="project-stack">HTML / CSS / JavaScript / Kakao API</span><span class="project-arrow"
-                                                                                              aria-hidden="true">↗</span>
-                </button>
-            </article>
-            <article class="project-card">
-                <button class="project-open" type="button" data-project="ems" aria-haspopup="dialog"><span
-                        class="project-no">09</span><span class="project-thumb"><img
-                        src="./assets/images/projects/ems/icon-logo.png" alt="" loading="lazy"></span><span
-                        class="project-copy"><strong>EMS</strong><small>Exercise Management System</small></span><span
-                        class="project-stack">HTML / CSS / JavaScript / Spring Boot / MariaDB</span><span
-                        class="project-arrow" aria-hidden="true">↗</span></button>
-            </article>
-        </div>
-    </section>
-    <section class="section" id="experience">
-        <div class="heading split">
-            <div><p class="kicker">EXPERIENCE</p>
-                <h2>실무에서 다양한 환경의 서비스를 개발했습니다.</h2></div>
-            <p>트론트(주)에서 내비게이션 HMI부터 웹 관리자 페이지, Middleware까지 서로 다른 환경의 개발과 유지보수를 경험했습니다.</p></div>
-        <div class="career-company">
-            <div class="company-head">
-                <div><span class="company-label">COMPANY</span>
-                    <h3>트론트(주)</h3></div>
-                <span class="company-period">2021.04 — 2024.05</span></div>
-            <div class="career-timeline">
-                <article class="career-item">
-                    <div class="career-date">2023.10 — 2024.05</div>
-                    <div class="career-body"><p class="career-type">NAVIGATION MIDDLEWARE</p>
-                        <h3>긴급 통화 데이터 처리 및 서비스 연동</h3>
-                        <p>Java 기반으로 내비게이션 긴급 통화 데이터를 처리하고 서비스 간 연동 기능을 개발했습니다.</p>
-                        <ul>
-                            <li>JSON 데이터 파싱 및 가공</li>
-                            <li>Broadcast 기반 서비스 간 데이터 전달</li>
-                            <li>연동 API 가이드 작성 및 협업</li>
-                            <li>데이터 흐름 확인과 연동 이슈 대응</li>
-                        </ul>
-                        <div class="career-tech">Java / Android / JSON / Broadcast</div>
-                    </div>
-                </article>
-                <article class="career-item">
-                    <div class="career-date">2023.04 — 2023.11</div>
-                    <div class="career-body"><p class="career-type">WEB / APP ADMIN</p>
-                        <h3>Spring Boot 기반 관리자 페이지 개발 및 유지보수</h3>
-                        <p>웹과 앱 서비스 운영에 필요한 관리자 기능을 유지보수하고 신규 관리 기능을 추가했습니다.</p>
-                        <ul>
-                            <li>회원 관리 기능 유지보수</li>
-                            <li>게시물 관리 기능 개발 및 수정</li>
-                            <li>배너 관리 기능 추가 및 기존 기능 개선</li>
-                            <li>프론트엔드와 백엔드 데이터 연동 및 동작 확인</li>
-                        </ul>
-                        <div class="career-tech">Java / Spring Boot / MariaDB / HTML / CSS / JavaScript</div>
-                    </div>
-                </article>
-                <article class="career-item">
-                    <div class="career-date">2021.04 — 2023.03</div>
-                    <div class="career-body"><p class="career-type">NAVIGATION HMI</p>
-                        <h3>차량용 내비게이션 HMI 개발 및 유지보수</h3>
-                        <p>C++ 기반 차량용 내비게이션 화면을 구성하고 기존 기능의 유지보수와 화면 동작을 수정했습니다.</p>
-                        <ul>
-                            <li>C++ 기반 내비게이션 HMI 개발</li>
-                            <li>내비게이션 화면 구성 및 UI 기능 구현</li>
-                            <li>기존 기능 유지보수 및 이슈 수정</li>
-                            <li>요구사항에 따른 화면 동작 수정과 기능 테스트</li>
-                        </ul>
-                        <div class="career-tech">C++ / Navigation / HMI</div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-    <section class="section" id="credentials">
-        <div class="heading"><p class="kicker">TRAINING & CERTIFICATION</p>
-            <h2>배운 내용을 현재의 방향으로 연결합니다.</h2></div>
-        <div class="credential-grid">
-            <div class="training-panel">
-                <div class="panel-title"><span>TRAINING</span>
-                    <p>현재 진행 중인 과정과 최근 웹 개발 교육 이력입니다.</p></div>
-                <article class="training-item current">
-                    <div class="training-date"><strong>2026</strong><span>08.11 - Present</span></div>
-                    <div class="training-content"><span class="status-badge">진행 중</span>
-                        <h3>K-뉴딜 SKT ALEPH</h3>
-                        <p class="training-name">AI 인프라·보안·네트워크 실무형 AX(AI 전환) 인재 양성 교육 과정</p>
-                        <div class="training-tags"><span>AI</span><span>Infrastructure</span><span>Security</span><span>Network</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="training-item">
-                    <div class="training-date"><strong>2025</strong><span>02.13 - 08.05</span></div>
-                    <div class="training-content"><span class="status-badge completed">수료</span>
-                        <h3>스마트웹 응용 프로그래밍 개발자 양성 과정B</h3>
-                        <p class="training-name">코리아IT아카데미 대구</p>
-                        <div class="training-tags"><span>Java</span><span>Spring Boot</span><span>MariaDB</span><span>Web Development</span>
-                        </div>
-                        <p class="achievement">Achievement · 성적우수상</p></div>
-                </article>
-            </div>
-            <aside class="cert-panel">
-                <div class="panel-title"><span>CERTIFICATION</span>
-                    <p>기존 포트폴리오에 공개했던 자격 정보를 기준으로 정리했습니다.</p></div>
-                <div class="cert-list">
-                    <article class="cert-item">
-                        <span class="cert-state">취득</span>
-                        <h3>정보처리기사</h3>
-                        <p>취득 완료</p>
-                        <small>한국산업인력공단</small>
-                    </article>
-                    <article class="cert-item">
-                        <span class="cert-state">취득</span>
-                        <h3>SQLD</h3>
-                        <p>2025.06</p>
-                        <small>한국데이터산업진흥원(K-DATA)</small>
-                    </article>
-                    <article class="cert-item">
-                        <span class="cert-state">취득</span>
-                        <h3>컴퓨터활용능력 2급</h3>
-                        <p>2015.09.04</p>
-                        <small>대한상공회의소 자격평가사업단</small>
-                    </article>
-                </div>
-            </aside>
-        </div>
-    </section>
-    <section class="section" id="stack">
-        <div class="heading split">
-            <div><p class="kicker">CURRENT FOCUS</p>
-                <h2>Tech Stack</h2></div>
-            <p>대표 기술은 역할에 따라 나누고, 아이콘에 마우스를 올리거나 Tab 키로 포커스하면 기술명을 확인할 수 있습니다.</p></div>
-        <div class="stack-groups">
-            <section class="stack-group">
-                <div class="stack-group-title"><span>01</span>
-                    <h3>Development</h3></div>
-                <div class="skills">
-                    <button class="skill-item" type="button" aria-label="Java"><img
-                            src="./assets/images/skills/skill-java.png" alt=""><span>Java</span></button>
-                    <button class="skill-item" type="button" aria-label="Spring Boot"><img
-                            src="./assets/images/skills/skill-spring-boot.png" alt=""><span>Spring Boot</span></button>
-                    <button class="skill-item" type="button" aria-label="MyBatis"><img
-                            src="./assets/images/skills/skill-mybatis.png" alt=""><span>MyBatis</span></button>
-                    <button class="skill-item" type="button" aria-label="React"><img
-                            src="./assets/images/skills/skill-react.png" alt=""><span>React</span></button>
-                    <button class="skill-item" type="button" aria-label="JavaScript"><img
-                            src="./assets/images/skills/skill-js.png" alt=""><span>JavaScript</span></button>
-                    <button class="skill-item" type="button" aria-label="HTML"><img
-                            src="./assets/images/skills/skill-html.png" alt=""><span>HTML</span></button>
-                    <button class="skill-item" type="button" aria-label="CSS"><img
-                            src="./assets/images/skills/skill-css.png" alt=""><span>CSS</span></button>
-                    <button class="skill-item" type="button" aria-label="C"><img
-                            src="./assets/images/skills/skill-c.png" alt=""><span>C</span></button>
-                    <button class="skill-item" type="button" aria-label="C++"><img
-                            src="./assets/images/skills/skill-cpp.png" alt=""><span>C++</span></button>
-                    <button class="skill-item" type="button" aria-label="C#"><img
-                            src="./assets/images/skills/skill-c-sharp.png" alt=""><span>C#</span></button>
-                </div>
-            </section>
-            <section class="stack-group">
-                <div class="stack-group-title"><span>02</span>
-                    <h3>Database</h3></div>
-                <div class="skills compact">
-                    <button class="skill-item" type="button" aria-label="MariaDB"><img
-                            src="./assets/images/skills/skill-mariadb.png" alt=""><span>MariaDB</span></button>
-                    <button class="skill-item" type="button" aria-label="MySQL"><img
-                            src="./assets/images/skills/skill-mysql.png" alt=""><span>MySQL</span></button>
-                </div>
-            </section>
-            <section class="stack-group tools-environment">
-                <div class="stack-group-title"><span>03</span>
-                    <h3>Tools &amp; Environment</h3></div>
-                <div class="tool-subgroups">
-                    <div class="tool-subgroup"><h4>Development &amp; Collaboration</h4>
-                        <div class="skills">
-                            <button class="skill-item" type="button" aria-label="Git"><img
-                                    src="./assets/images/skills/skill-git.png" alt=""><span>Git</span></button>
-                            <button class="skill-item" type="button" aria-label="GitHub"><img
-                                    src="./assets/images/skills/skill-github.png" alt=""><span>GitHub</span></button>
-                            <button class="skill-item" type="button" aria-label="SourceTree"><img
-                                    src="./assets/images/skills/skill-sourcetree.png" alt=""><span>SourceTree</span>
-                            </button>
-                            <button class="skill-item" type="button" aria-label="Bitbucket"><img
-                                    src="./assets/images/skills/skill-bitbucket.png" alt=""><span>Bitbucket</span>
-                            </button>
-                            <button class="skill-item" type="button" aria-label="Confluence"><img
-                                    src="./assets/images/skills/skill-confluence.png" alt=""><span>Confluence</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="tool-subgroup"><h4>IDE &amp; Environment</h4>
-                        <div class="skills">
-                            <button class="skill-item" type="button" aria-label="IntelliJ IDEA"><img
-                                    src="./assets/images/skills/skill-intellij.png" alt=""><span>IntelliJ IDEA</span>
-                            </button>
-                            <button class="skill-item" type="button" aria-label="Eclipse"><img
-                                    src="./assets/images/skills/skill-eclipse.png" alt=""><span>Eclipse</span></button>
-                            <button class="skill-item" type="button" aria-label="Visual Studio"><img
-                                    src="./assets/images/skills/skill-visual-studio.png"
-                                    alt=""><span>Visual Studio</span></button>
-                            <button class="skill-item" type="button" aria-label="MySQL Workbench"><img
-                                    src="./assets/images/skills/skill-workbench.png" alt=""><span>MySQL Workbench</span>
-                            </button>
-                            <button class="skill-item" type="button" aria-label="DBeaver"><img
-                                    src="./assets/images/skills/skill-dbeaver.png" alt=""><span>DBeaver</span></button>
-                            <button class="skill-item" type="button" aria-label="Linux"><img
-                                    src="./assets/images/skills/skill-linux.png" alt=""><span>Linux</span></button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </section>
-    <section class="section proof">
-        <div><p class="kicker">PUBLIC PROOF</p>
-            <h2>코드와 결과물로<br>확인할 수 있습니다.</h2></div>
-        <a class="github-proof" href="https://github.com/prjsghq7" target="_blank" rel="noopener noreferrer"><span>GitHub Profile</span><strong>github.com/prjsghq7
-            ↗</strong></a></section>
-</main>
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="개발자 김건호의 포트폴리오"><title>김건호 | Developer Portfolio</title><link rel="icon" type="image/png" href="./assets/images/brand/k-maze.png"><link rel="stylesheet" href="./assets/styles/style.css"><script defer src="./assets/scripts/app.js"></script><script defer src="./assets/scripts/theme.js"></script><script defer src="./assets/scripts/project-dialog.js"></script></head><body>
+<a class="skip" href="#main">본문 바로가기</a><header class="header"><a class="brand" href="#top"><span class="brand-mark"><img src="./assets/images/brand/k-maze.png" alt=""></span><span>KIM GEONHO</span></a><div class="header-actions"><button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 테마로 변경" title="테마 변경">
+<span class="theme-state theme-state-light" aria-hidden="true">
+  <span class="theme-state-icon">
+    <svg viewBox="0 0 24 24" focusable="false">
+      <circle cx="12" cy="12" r="3.5"></circle>
+      <path d="M12 2.5V5M12 19V21.5M2.5 12H5M19 12H21.5M5.28 5.28L7.05 7.05M16.95 16.95L18.72 18.72M18.72 5.28L16.95 7.05M7.05 16.95L5.28 18.72"></path>
+    </svg>
+  </span>
+  <span>LIGHT</span>
+</span>
+<span class="theme-state theme-state-night" aria-hidden="true">
+  <span class="theme-state-icon">
+    <svg viewBox="0 0 24 24" focusable="false">
+      <path d="M19.2 15.3A7.8 7.8 0 0 1 8.7 4.8 8.3 8.3 0 1 0 19.2 15.3Z"></path>
+    </svg>
+  </span>
+  <span>NIGHT</span>
+</span>
+</button><button class="menu" type="button" aria-expanded="false" aria-controls="nav">MENU</button></div><nav id="nav"><a href="#strengths">Strengths</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#credentials">Credentials</a><a href="#stack">Stack</a></nav></header>
+<main id="main"><section class="hero" id="top"><div class="hero-text"><p class="kicker">DEVELOPER PORTFOLIO / 2026</p><h1>문제를 구조화하고,<br><em>동작하는 결과로 만듭니다.</em></h1><p class="lead">웹, 앱, 내비게이션 개발 경험을 바탕으로 백엔드 개발 역량을 쌓아왔으며, 현재는 인프라, 네트워크, 보안까지 학습 영역을 확장하고 있습니다. 서비스 기능뿐 아니라 시스템이 동작하는 환경과 연결 구조까지 이해하는 개발자를 목표로 합니다.</p><div class="actions"><a class="primary" href="#projects">프로젝트 보기</a><a class="secondary" href="https://github.com/prjsghq7" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div><div class="core"><article><i>01</i><b>문제 구조화</b><p>요구사항을 기능과 데이터 흐름으로 나누어 구현 순서를 정합니다.</p></article><article><i>02</i><b>개발 경험</b><p>웹, 앱, 내비게이션 환경에서 실제 기능을 구현해왔습니다.</p></article><article><i>03</i><b>기술 영역 확장</b><p>백엔드를 중심으로 인프라, 네트워크, 보안까지 시스템 전반을 학습하고 있습니다.</p></article></div></section>
+<section class="section" id="strengths"><div class="heading"><p class="kicker">STRENGTHS / S-A-R</p><h2>강점을 과정으로 설명합니다.</h2></div><div class="sar"><article><h3>구조를 먼저 잡습니다.</h3><dl><dt>Situation</dt><dd>공공데이터 기반 팀 프로젝트의 초기 구조와 데이터 흐름이 필요했습니다.</dd><dt>Action</dt><dd>Spring Boot와 MariaDB 기준으로 테이블, 프로젝트 구조, API 수집 및 파싱 흐름을 구성했습니다.</dd><dt>Result</dt><dd>팀이 공통 구조 위에서 기능 개발을 이어가고 맞춤형 복지 정보 제공 기능으로 연결했습니다.</dd></dl></article><article><h3>데이터의 사용 지점까지 봅니다.</h3><dl><dt>Situation</dt><dd>회원, 도서, 리뷰와 관리자 통계를 하나의 서비스 흐름으로 연결해야 했습니다.</dd><dt>Action</dt><dd>DB와 API를 구성하고 리뷰와 통계 데이터를 실제 화면에서 사용할 수 있도록 연동했습니다.</dd><dt>Result</dt><dd>검색, 리뷰, 별점과 관리자 통계가 연결된 웹 서비스를 완성했습니다.</dd></dl></article><article><h3>연동 문제를 끝까지 추적합니다.</h3><dl><dt>Situation</dt><dd>내비게이션 기능에서 다른 서비스와 긴급 통화 상태 및 데이터를 주고받아야 했습니다.</dd><dt>Action</dt><dd>JSON 파싱과 Broadcast 메시지, API 가이드로 서비스 간 연동 기준을 맞췄습니다.</dd><dt>Result</dt><dd>여러 서비스가 동일한 긴급 통화 데이터를 사용할 수 있도록 연결했습니다.</dd></dl></article></div></section>
+<section class="section" id="projects"><div class="heading split"><div><p class="kicker">PROJECT ARCHIVE</p><h2>Projects</h2></div><p>완성된 프로젝트와 학습 과정의 결과물을 함께 기록했습니다.<br>선택하면 실제 캡처와 상세 내용을 볼 수 있습니다.</p></div><div class="project-list"><article class="project-card"><button class="project-open" type="button" data-project="rebook" aria-haspopup="dialog"><span class="project-no">01</span><span class="project-thumb"><img src="./assets/images/projects/rebook/icon-logo.png" alt="" loading="lazy"></span><span class="project-copy"><strong>Re:Book</strong><small>독서 리뷰 및 추천 웹 플랫폼</small></span><span class="project-stack">HTML / CSS / JavaScript / Spring Boot / MariaDB</span><span class="project-arrow" aria-hidden="true">↗</span>
+<span class="keyboard-guide project-keyboard-guide" aria-hidden="true">Enter / Space 상세 보기</span>
+</button></article><article class="project-card"><button class="project-open" type="button" data-project="alleon" aria-haspopup="dialog"><span class="project-no">02</span><span class="project-thumb"><img src="./assets/images/projects/alleon/icon-logo.png" alt="" loading="lazy"></span><span class="project-copy"><strong>알리온</strong><small>맞춤형 복지 정보 플랫폼</small></span><span class="project-stack">HTML / CSS / JavaScript / Spring Boot / MariaDB</span><span class="project-arrow" aria-hidden="true">↗</span>
+<span class="keyboard-guide project-keyboard-guide" aria-hidden="true">Enter / Space 상세 보기</span>
+</button></article><article class="project-card"><button class="project-open" type="button" data-project="vr" aria-haspopup="dialog"><span class="project-no">03</span><span class="project-thumb"><img src="./assets/images/projects/vr/icon-logo.png" alt="" loading="lazy"></span><span class="project-copy"><strong>VR - 도심속 퍼즐 찾기</strong><small>가상현실 퍼즐 게임</small></span><span class="project-stack">C# / JavaScript / Unity / Steam VR</span><span class="project-arrow" aria-hidden="true">↗</span>
+<span class="keyboard-guide project-keyboard-guide" aria-hidden="true">Enter / Space 상세 보기</span>
+</button></article><article class="project-card"><button class="project-open" type="button" data-project="omok" aria-haspopup="dialog"><span class="project-no">04</span><span class="project-thumb"><img src="./assets/images/projects/omok/icon-logo.png" alt="" loading="lazy"></span><span class="project-copy"><strong>오목</strong><small>콘솔 기반 2인용 오목</small></span><span class="project-stack">C / Visual Studio</span><span class="project-arrow" aria-hidden="true">↗</span>
+<span class="keyboard-guide project-keyboard-guide" aria-hidden="true">Enter / Space 상세 보기</span>
+</button></article><article class="project-card"><button class="project-open" type="button" data-project="weather" aria-haspopup="dialog"><span class="project-no">05</span><span class="project-thumb"><img src="./assets/images/projects/weather/icon-logo.png" alt="" loading="lazy"></span><span class="project-copy"><strong>동네 날씨 예보</strong><small>공공데이터 기반 Android 날씨 앱</small></span><span class="project-stack">Java / Android Studio / Public API</span><span class="project-arrow" aria-hidden="true">↗</span>
+<span class="keyboard-guide project-keyboard-guide" aria-hidden="true">Enter / Space 상세 보기</span>
+</button></article><article class="project-card"><button class="project-open" type="button" data-project="avs" aria-haspopup="dialog"><span class="project-no">06</span><span class="project-thumb"><img src="./assets/images/projects/avs/icon-logo.png" alt="" loading="lazy"></span><span class="project-copy"><strong>AVS</strong><small>Automatic Ventilation System</small></span><span class="project-stack">C / Arduino / App Inventor</span><span class="project-arrow" aria-hidden="true">↗</span>
+<span class="keyboard-guide project-keyboard-guide" aria-hidden="true">Enter / Space 상세 보기</span>
+</button></article><article class="project-card"><button class="project-open" type="button" data-project="taza" aria-haspopup="dialog"><span class="project-no">07</span><span class="project-thumb"><img src="./assets/images/projects/taza/icon-logo.png" alt="" loading="lazy"></span><span class="project-copy"><strong>Taza</strong><small>지도와 길찾기 기반 웹 프로젝트</small></span><span class="project-stack">HTML / CSS / JavaScript / Kakao API</span><span class="project-arrow" aria-hidden="true">↗</span>
+<span class="keyboard-guide project-keyboard-guide" aria-hidden="true">Enter / Space 상세 보기</span>
+</button></article><article class="project-card"><button class="project-open" type="button" data-project="restaurant" aria-haspopup="dialog"><span class="project-no">08</span><span class="project-thumb"><img src="./assets/images/projects/restaurant/icon-logo.png" alt="" loading="lazy"></span><span class="project-copy"><strong>식당 찾기</strong><small>Kakao Search API 기반 식당 검색</small></span><span class="project-stack">HTML / CSS / JavaScript / Kakao API</span><span class="project-arrow" aria-hidden="true">↗</span>
+<span class="keyboard-guide project-keyboard-guide" aria-hidden="true">Enter / Space 상세 보기</span>
+</button></article><article class="project-card"><button class="project-open" type="button" data-project="ems" aria-haspopup="dialog"><span class="project-no">09</span><span class="project-thumb"><img src="./assets/images/projects/ems/icon-logo.png" alt="" loading="lazy"></span><span class="project-copy"><strong>EMS</strong><small>Exercise Management System</small></span><span class="project-stack">HTML / CSS / JavaScript / Spring Boot / MariaDB</span><span class="project-arrow" aria-hidden="true">↗</span>
+<span class="keyboard-guide project-keyboard-guide" aria-hidden="true">Enter / Space 상세 보기</span>
+</button></article></div></section>
+<section class="section" id="experience"><div class="heading split"><div><p class="kicker">EXPERIENCE</p><h2>실무에서 다양한 환경의 서비스를 개발했습니다.</h2></div><p>트론트(주)에서 내비게이션 HMI부터 웹 관리자 페이지, Middleware까지 서로 다른 환경의 개발과 유지보수를 경험했습니다.</p></div><div class="career-company"><div class="company-head"><div><span class="company-label">COMPANY</span><h3>트론트(주)</h3></div><span class="company-period">2021.04 — 2024.05</span></div><div class="career-timeline">
+<article class="career-item"><div class="career-date">2023.10 — 2024.05</div><div class="career-body"><p class="career-type">NAVIGATION MIDDLEWARE</p><h3>긴급 통화 데이터 처리 및 서비스 연동</h3><p>Java 기반으로 내비게이션 긴급 통화 데이터를 처리하고 서비스 간 연동 기능을 개발했습니다.</p><ul><li>JSON 데이터 파싱 및 가공</li><li>Broadcast 기반 서비스 간 데이터 전달</li><li>연동 API 가이드 작성 및 협업</li><li>데이터 흐름 확인과 연동 이슈 대응</li></ul><div class="career-tech">Java / Android / JSON / Broadcast</div></div></article>
+<article class="career-item"><div class="career-date">2023.04 — 2023.11</div><div class="career-body"><p class="career-type">WEB / APP ADMIN</p><h3>Spring Boot 기반 관리자 페이지 개발 및 유지보수</h3><p>웹과 앱 서비스 운영에 필요한 관리자 기능을 유지보수하고 신규 관리 기능을 추가했습니다.</p><ul><li>회원 관리 기능 유지보수</li><li>게시물 관리 기능 개발 및 수정</li><li>배너 관리 기능 추가 및 기존 기능 개선</li><li>프론트엔드와 백엔드 데이터 연동 및 동작 확인</li></ul><div class="career-tech">Java / Spring Boot / MariaDB / HTML / CSS / JavaScript</div></div></article>
+<article class="career-item"><div class="career-date">2021.04 — 2023.03</div><div class="career-body"><p class="career-type">NAVIGATION HMI</p><h3>차량용 내비게이션 HMI 개발 및 유지보수</h3><p>C++ 기반 차량용 내비게이션 화면을 구성하고 기존 기능의 유지보수와 화면 동작을 수정했습니다.</p><ul><li>C++ 기반 내비게이션 HMI 개발</li><li>내비게이션 화면 구성 및 UI 기능 구현</li><li>기존 기능 유지보수 및 이슈 수정</li><li>요구사항에 따른 화면 동작 수정과 기능 테스트</li></ul><div class="career-tech">C++ / Navigation / HMI</div></div></article>
+</div></div></section>
+<section class="section" id="credentials">
+<div class="heading"><p class="kicker">TRAINING & CERTIFICATION</p><h2>배운 내용을 현재의 방향으로 연결합니다.</h2></div>
+<div class="credential-grid">
+  <div class="training-panel">
+    <div class="panel-title"><span>TRAINING</span><p>현재 진행 중인 과정과 최근 웹 개발 교육 이력입니다.</p></div>
+    <article class="training-item current">
+      <div class="training-date"><strong>2026</strong><span>08.11 - Present</span></div>
+      <div class="training-content"><span class="status-badge">진행 중</span><h3>K-뉴딜 SKT ALEPH</h3><p class="training-name">AI 인프라·보안·네트워크 실무형 AX(AI 전환) 인재 양성 교육 과정</p><div class="training-tags"><span>AI</span><span>Infrastructure</span><span>Security</span><span>Network</span></div></div>
+    </article>
+    <article class="training-item">
+      <div class="training-date"><strong>2025</strong><span>02.13 - 08.05</span></div>
+      <div class="training-content"><span class="status-badge completed">수료</span><h3>스마트웹 응용 프로그래밍 개발자 양성 과정B</h3><p class="training-name">코리아IT아카데미 대구</p><div class="training-tags"><span>Java</span><span>Spring Boot</span><span>MariaDB</span><span>Web Development</span></div><p class="achievement">Achievement · 성적우수상</p></div>
+    </article>
+  </div>
+  <aside class="cert-panel">
+    <div class="panel-title"><span>CERTIFICATION</span><p>기존 포트폴리오에 공개했던 자격 정보를 기준으로 정리했습니다.</p></div>
+    <div class="cert-list">
+  <article class="cert-item">
+    <span class="cert-state">취득</span>
+    <h3>정보처리기사</h3>
+    <p>취득 완료</p>
+    <small>한국산업인력공단</small>
+  </article>
+  <article class="cert-item">
+    <span class="cert-state">취득</span>
+    <h3>SQLD</h3>
+    <p>2025.06</p>
+    <small>한국데이터산업진흥원(K-DATA)</small>
+  </article>
+  <article class="cert-item">
+    <span class="cert-state">취득</span>
+    <h3>컴퓨터활용능력 2급</h3>
+    <p>2015.09.04</p>
+    <small>대한상공회의소 자격평가사업단</small>
+  </article>
+</div>
+  </aside>
+</div>
+</section><section class="section" id="stack">
+<div class="heading split"><div><p class="kicker">CURRENT FOCUS</p><h2>Tech Stack</h2></div><p>주요 기술과 개발 환경을 역할에 따라 정리했습니다.</p></div>
+<div class="stack-groups">
+<section class="stack-group"><div class="stack-group-title"><span>01</span><h3>Development</h3></div><div class="skills">
+<button class="skill-item" type="button" aria-label="Java"><img src="./assets/images/skills/skill-java.png" alt=""><span>Java</span></button>
+<button class="skill-item" type="button" aria-label="Spring Boot"><img src="./assets/images/skills/skill-spring-boot.png" alt=""><span>Spring Boot</span></button>
+<button class="skill-item" type="button" aria-label="MyBatis"><img src="./assets/images/skills/skill-mybatis.png" alt=""><span>MyBatis</span></button>
+<button class="skill-item" type="button" aria-label="React"><img src="./assets/images/skills/skill-react.png" alt=""><span>React</span></button>
+<button class="skill-item" type="button" aria-label="JavaScript"><img src="./assets/images/skills/skill-js.png" alt=""><span>JavaScript</span></button>
+<button class="skill-item" type="button" aria-label="HTML"><img src="./assets/images/skills/skill-html.png" alt=""><span>HTML</span></button>
+<button class="skill-item" type="button" aria-label="CSS"><img src="./assets/images/skills/skill-css.png" alt=""><span>CSS</span></button>
+<button class="skill-item" type="button" aria-label="C"><img src="./assets/images/skills/skill-c.png" alt=""><span>C</span></button>
+<button class="skill-item" type="button" aria-label="C++"><img src="./assets/images/skills/skill-cpp.png" alt=""><span>C++</span></button>
+<button class="skill-item" type="button" aria-label="C#"><img src="./assets/images/skills/skill-c-sharp.png" alt=""><span>C#</span></button>
+</div></section>
+<section class="stack-group"><div class="stack-group-title"><span>02</span><h3>Database</h3></div><div class="skills compact">
+<button class="skill-item" type="button" aria-label="MariaDB"><img src="./assets/images/skills/skill-mariadb.png" alt=""><span>MariaDB</span></button>
+<button class="skill-item" type="button" aria-label="MySQL"><img src="./assets/images/skills/skill-mysql.png" alt=""><span>MySQL</span></button>
+</div></section>
+<section class="stack-group tools-environment"><div class="stack-group-title"><span>03</span><h3>Tools &amp; Environment</h3></div><div class="tool-subgroups">
+<div class="tool-subgroup"><h4>Development &amp; Collaboration</h4><div class="skills">
+<button class="skill-item" type="button" aria-label="Git"><img src="./assets/images/skills/skill-git.png" alt=""><span>Git</span></button>
+<button class="skill-item" type="button" aria-label="GitHub"><img src="./assets/images/skills/skill-github.png" alt=""><span>GitHub</span></button>
+<button class="skill-item" type="button" aria-label="SourceTree"><img src="./assets/images/skills/skill-sourcetree.png" alt=""><span>SourceTree</span></button>
+<button class="skill-item" type="button" aria-label="Bitbucket"><img src="./assets/images/skills/skill-bitbucket.png" alt=""><span>Bitbucket</span></button>
+<button class="skill-item" type="button" aria-label="Confluence"><img src="./assets/images/skills/skill-confluence.png" alt=""><span>Confluence</span></button>
+</div></div>
+<div class="tool-subgroup"><h4>IDE &amp; Environment</h4><div class="skills">
+<button class="skill-item" type="button" aria-label="IntelliJ IDEA"><img src="./assets/images/skills/skill-intellij.png" alt=""><span>IntelliJ IDEA</span></button>
+<button class="skill-item" type="button" aria-label="Eclipse"><img src="./assets/images/skills/skill-eclipse.png" alt=""><span>Eclipse</span></button>
+<button class="skill-item" type="button" aria-label="Visual Studio"><img src="./assets/images/skills/skill-visual-studio.png" alt=""><span>Visual Studio</span></button>
+<button class="skill-item" type="button" aria-label="MySQL Workbench"><img src="./assets/images/skills/skill-workbench.png" alt=""><span>MySQL Workbench</span></button>
+<button class="skill-item" type="button" aria-label="DBeaver"><img src="./assets/images/skills/skill-dbeaver.png" alt=""><span>DBeaver</span></button>
+<button class="skill-item" type="button" aria-label="Linux"><img src="./assets/images/skills/skill-linux.png" alt=""><span>Linux</span></button>
+</div></div></div></section>
+</div>
+</section>
+<section class="section proof"><div><p class="kicker">PUBLIC PROOF</p><h2>코드와 결과물로<br>확인할 수 있습니다.</h2></div><a class="github-proof" href="https://github.com/prjsghq7" target="_blank" rel="noopener noreferrer"><span>GitHub Profile</span><strong>github.com/prjsghq7 ↗</strong></a></section></main>
 <footer><span>© 2026 KIM GEONHO</span><a href="#top">TOP ↑</a></footer>
-<dialog id="project-dialog" aria-labelledby="dialog-title">
-    <div class="dialog-shell">
-        <header class="dialog-header">
-            <div><p class="kicker">PROJECT DETAIL</p>
-                <h2 id="dialog-title"></h2>
-                <p id="dialog-subtitle"></p></div>
-            <button id="dialog-close" type="button" aria-label="닫기">×</button>
-        </header>
-        <div class="dialog-grid">
-            <div class="gallery">
-                <div class="gallery-stage"><img id="dialog-image" alt=""></div>
-                <div class="gallery-controls" aria-label="프로젝트 이미지 이동">
-                    <button id="gallery-prev" type="button" aria-label="이전 이미지">←</button>
-                    <span id="gallery-count" aria-live="polite"></span>
-                    <button id="gallery-next" type="button" aria-label="다음 이미지">→</button>
-                </div>
-            </div>
-            <div class="dialog-info">
-                <section><span>ABOUT</span>
-                    <p id="dialog-desc"></p></section>
-                <section><span>MY ROLE</span>
-                    <p id="dialog-role"></p></section>
-                <section><span>STACK</span>
-                    <p id="dialog-stack"></p></section>
-                <a id="dialog-link" class="dialog-link" target="_blank" rel="noopener noreferrer">프로젝트 사이트 열기 ↗</a>
-            </div>
-        </div>
-    </div>
-</dialog>
-</body>
-</html>
+<dialog id="project-dialog" aria-labelledby="dialog-title"><div class="dialog-shell"><header class="dialog-header"><div><p class="kicker">PROJECT DETAIL</p><h2 id="dialog-title"></h2><p id="dialog-subtitle"></p></div><button id="dialog-close" type="button" aria-label="닫기">×</button></header><div class="dialog-grid"><div class="gallery"><div class="gallery-stage"><img id="dialog-image" alt=""></div><div class="gallery-controls" aria-label="프로젝트 이미지 이동"><button id="gallery-prev" type="button" aria-label="이전 이미지">←</button><span id="gallery-count" aria-live="polite"></span><button id="gallery-next" type="button" aria-label="다음 이미지">→</button></div>
+<p class="keyboard-guide dialog-keyboard-guide" aria-hidden="true">← → 이미지 이동 · Esc 닫기</p></div><div class="dialog-info"><section><span>ABOUT</span><p id="dialog-desc"></p></section><section><span>MY ROLE</span><p id="dialog-role"></p></section><section><span>STACK</span><p id="dialog-stack"></p></section><a id="dialog-link" class="dialog-link" target="_blank" rel="noopener noreferrer">프로젝트 사이트 열기 ↗</a></div></div></div></dialog></body></html>
