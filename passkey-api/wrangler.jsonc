@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-passkey-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-21",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "portfolio-passkeys",
+      "database_id": "7716c2bb-0021-45f5-92ae-55b49ad3153b"
+    }
+  ],
+  "vars": {
+    "FRONTEND_ORIGIN": "https://prjsghq7.github.io",
+    "RP_ID": "prjsghq7.github.io"
+  }
+}

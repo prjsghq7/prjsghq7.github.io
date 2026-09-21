@@ -1,0 +1,10 @@
+{
+  "training": true,
+  "aleph": true,
+  "award": true,
+  "stack_groups": 3,
+  "projects": 9,
+  "theme": true,
+  "dialog": true,
+  "docs_exposed": false
+}

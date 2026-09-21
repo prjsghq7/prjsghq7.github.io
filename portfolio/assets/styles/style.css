@@ -348,6 +348,43 @@ html[data-theme="dark"] #theme-toggle:focus-visible .theme-state-light {
   transition-duration: .10s;
 }
 
+/* A small entry point keeps the public portfolio layout intact. */
+.actions .private-open{padding:12px 17px;border-radius:9px;font-weight:700;font-size:14px;cursor:pointer}
+.private-dialog{width:min(760px,calc(100% - 28px));max-height:calc(100dvh - 28px);border:0;background:var(--paper);color:var(--ink)}
+.private-dialog [hidden]{display:none!important}
+.private-dialog::backdrop{background:#0e1813b8;backdrop-filter:blur(5px)}
+.private-shell{padding:28px}
+.private-head{display:flex;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.private-head h2{margin:0;font:800 clamp(27px,4vw,40px)/1.16 Manrope,"Noto Sans KR"}
+#private-close{flex:0 0 44px;width:44px;height:44px;border:1px solid var(--line);background:var(--bg);font-size:28px;cursor:pointer}
+.private-disclaimer{margin:16px 0 0;color:var(--muted);font-size:12px}
+.private-status{min-height:24px;margin:12px 0;color:var(--accent);font-size:13px}
+.private-locked{padding:24px;border:1px solid var(--line);background:var(--bg)}
+.private-locked h3,.private-unlocked h3{margin:0 0 8px}
+.private-locked p,.private-passkeys p{color:var(--muted);font-size:13px}
+.private-dialog button{cursor:pointer}
+.private-action,#private-enroll-button,#private-add-passkey{padding:11px 15px;border:0;border-radius:8px;background:var(--green);color:#fff;font-weight:700}
+html[data-theme="dark"] .private-action,html[data-theme="dark"] #private-enroll-button,html[data-theme="dark"] #private-add-passkey{color:#0b0e13}
+#private-enroll{display:grid;gap:8px;max-width:330px;margin-top:20px}
+.private-dialog label{display:block;margin:12px 0 5px;font-size:12px;font-weight:700}
+.private-dialog input,.private-dialog select,.private-dialog textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:7px;background:var(--paper);color:var(--ink);font:inherit}
+.private-account{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:8px 0 25px}
+.private-account span{font-weight:700}
+.private-account button,.private-passkey-list button{padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:var(--bg)}
+.private-note-list,.private-passkey-list{list-style:none;padding:0}
+.private-note-list{display:grid;gap:10px}
+.private-note-list li{padding:17px;border:1px solid var(--line);background:var(--bg)}
+.private-note-list small{color:var(--accent);font-weight:800}
+.private-note-list h4{margin:5px 0}
+.private-note-list p{margin:0;white-space:pre-wrap;color:var(--muted);font-size:13px}
+.private-note-form,.private-passkeys{padding-top:20px;margin-top:25px;border-top:1px solid var(--line)}
+.private-note-form h4{margin:0 0 10px}
+.private-note-form button{margin-top:13px}
+.private-passkey-list li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.private-passkey-list small{display:block;color:var(--muted)}
+.private-passkeys #private-add-passkey{margin-top:10px}
+@media(max-width:560px){.actions{flex-wrap:wrap}.private-shell{padding:18px}.private-locked{padding:18px}}
+
 @media (prefers-reduced-motion: reduce) {
   #theme-toggle,
   #theme-toggle .theme-state {

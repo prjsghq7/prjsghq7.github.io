@@ -1,0 +1,6 @@
+passkey-api/node_modules/
+passkey-api/.npm-cache/
+passkey-api/.wrangler/
+passkey-api/.test-browser/
+passkey-api/.dev.vars
+passkey-api/.env*
