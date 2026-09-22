@@ -12,8 +12,15 @@
   const notes = dialog.querySelector('#private-note-list');
   const passkeys = dialog.querySelector('#private-passkey-list');
   const noteForm = dialog.querySelector('#private-note-form');
+  const noteTitle = dialog.querySelector('#private-note-title');
+  const noteBody = dialog.querySelector('#private-note-body');
+  const noteCategory = dialog.querySelector('#private-category');
+  const noteFormTitle = dialog.querySelector('#private-note-form-title');
+  const noteSubmit = dialog.querySelector('#private-note-submit');
+  const noteCancel = dialog.querySelector('#private-note-cancel');
   let sessionToken = null;
   let accountId = null;
+  let editingNoteId = null;
   let pending = false;
   let inviteToken = location.hash.startsWith('#enroll=')
     ? location.hash.slice('#enroll='.length) : null;
@@ -26,6 +33,13 @@
   function message(value) {
     status.textContent = value;
   }
+  function resetNoteForm() {
+    editingNoteId = null;
+    noteForm.reset();
+    noteFormTitle.textContent = '개선 메모 추가';
+    noteSubmit.textContent = '메모 저장';
+    noteCancel.hidden = true;
+  }
   function setLocked() {
     locked.hidden = false;
     unlocked.hidden = true;
@@ -33,6 +47,7 @@
     accountId = null;
     notes.replaceChildren();
     passkeys.replaceChildren();
+    resetNoteForm();
   }
   function setUnlocked() {
     locked.hidden = true;
@@ -153,7 +168,40 @@
       category.textContent = item.category;
       title.textContent = item.title;
       body.textContent = item.body;
-      li.append(category, title, body);
+      const actions = document.createElement('div');
+      actions.className = 'private-note-actions';
+      const edit = document.createElement('button');
+      edit.type = 'button';
+      edit.textContent = '수정';
+      edit.setAttribute('aria-label', item.title + ' 메모 수정');
+      edit.addEventListener('click', () => {
+        if (pending) return;
+        editingNoteId = item.id;
+        noteCategory.value = item.category;
+        noteTitle.value = item.title;
+        noteBody.value = item.body;
+        noteFormTitle.textContent = '개선 메모 수정';
+        noteSubmit.textContent = '수정 저장';
+        noteCancel.hidden = false;
+        noteForm.scrollIntoView({ block: 'nearest' });
+        noteTitle.focus();
+        message('메모를 수정 중입니다.');
+      });
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.textContent = '삭제';
+      remove.setAttribute('aria-label', item.title + ' 메모 삭제');
+      remove.addEventListener('click', () => {
+        if (pending || !confirm('이 메모를 삭제할까요?')) return;
+        run(async () => {
+          await api('/api/accounts/' + encodeURIComponent(accountId) + '/notes/' + encodeURIComponent(item.id), 'DELETE');
+          if (editingNoteId === item.id) resetNoteForm();
+          await loadPrivate();
+          message('메모를 삭제했습니다.');
+        });
+      });
+      actions.append(edit, remove);
+      li.append(category, title, body, actions);
       notes.append(li);
     }
   }
@@ -264,17 +312,25 @@
     setLocked();
     message('로그아웃했습니다.');
   }));
+  noteCancel.addEventListener('click', () => {
+    if (pending) return;
+    resetNoteForm();
+    message('메모 수정을 취소했습니다.');
+  });
   noteForm.addEventListener('submit', (event) => {
     event.preventDefault();
     run(async () => {
-      await api('/api/accounts/' + encodeURIComponent(accountId) + '/notes', 'POST', {
-        category: dialog.querySelector('#private-category').value,
-        title: dialog.querySelector('#private-note-title').value,
-        body: dialog.querySelector('#private-note-body').value,
+      const wasEditing = Boolean(editingNoteId);
+      const path = '/api/accounts/' + encodeURIComponent(accountId) + '/notes'
+        + (wasEditing ? '/' + encodeURIComponent(editingNoteId) : '');
+      await api(path, wasEditing ? 'PATCH' : 'POST', {
+        category: noteCategory.value,
+        title: noteTitle.value,
+        body: noteBody.value,
       });
-      noteForm.reset();
+      resetNoteForm();
       await loadPrivate();
-      message('메모를 저장했습니다.');
+      message(wasEditing ? '메모를 수정했습니다.' : '메모를 저장했습니다.');
     });
   });
 })();

@@ -139,11 +139,11 @@
       <h3>나만 보는 개선 메모</h3>
       <ul id="private-note-list" class="private-note-list"></ul>
       <form id="private-note-form" class="private-note-form">
-        <h4>개선 메모 추가</h4>
+        <h4 id="private-note-form-title">개선 메모 추가</h4>
         <label for="private-category">분류</label><select id="private-category" required><option>소개·경력</option><option>프로젝트</option><option>화면·사용성</option></select>
         <label for="private-note-title">제목</label><input id="private-note-title" type="text" minlength="2" maxlength="80" required>
         <label for="private-note-body">내용</label><textarea id="private-note-body" minlength="2" maxlength="1000" rows="3" required></textarea>
-        <button class="private-action" type="submit">메모 저장</button>
+        <div class="private-note-form-actions"><button id="private-note-submit" class="private-action" type="submit">메모 저장</button><button id="private-note-cancel" type="button" hidden>수정 취소</button></div>
       </form>
       <div class="private-passkeys"><h3>등록된 패스키</h3><p>기기 분실에 대비해 두 개를 등록하세요. 마지막 패스키는 삭제할 수 없습니다.</p><ul id="private-passkey-list"></ul><label for="private-passkey-name">새 패스키 이름</label><input id="private-passkey-name" type="text" maxlength="40" autocomplete="off" placeholder="예: 보안 키"><button id="private-add-passkey" type="button">패스키 추가</button></div>
     </section>

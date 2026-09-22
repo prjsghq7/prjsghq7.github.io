@@ -377,9 +377,12 @@ html[data-theme="dark"] .private-action,html[data-theme="dark"] #private-enroll-
 .private-note-list small{color:var(--accent);font-weight:800}
 .private-note-list h4{margin:5px 0}
 .private-note-list p{margin:0;white-space:pre-wrap;color:var(--muted);font-size:13px}
+.private-note-actions{display:flex;gap:8px;margin-top:13px}
+.private-note-actions button,.private-note-form-actions #private-note-cancel{padding:7px 10px;border:1px solid var(--line);border-radius:7px;background:var(--paper)}
 .private-note-form,.private-passkeys{padding-top:20px;margin-top:25px;border-top:1px solid var(--line)}
 .private-note-form h4{margin:0 0 10px}
 .private-note-form button{margin-top:13px}
+.private-note-form-actions{display:flex;align-items:center;gap:8px}
 .private-passkey-list li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
 .private-passkey-list small{display:block;color:var(--muted)}
 .private-passkeys #private-add-passkey{margin-top:10px}

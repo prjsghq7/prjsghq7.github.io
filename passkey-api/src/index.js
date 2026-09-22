@@ -36,6 +36,14 @@ function reply(value, status = 200, headers = {}) {
     headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', ...headers },
   });
 }
+function noteFields(body) {
+  if (!CATEGORIES.has(body.category) ||
+    typeof body.title !== 'string' || body.title.trim().length < 2 || body.title.trim().length > 80 ||
+    typeof body.body !== 'string' || body.body.trim().length < 2 || body.body.trim().length > 1000) {
+    throw new ApiError(400, '메모 분류·제목·내용을 확인해 주세요.');
+  }
+  return { category: body.category, title: body.title.trim(), body: body.body.trim() };
+}
 async function readBody(request) {
   if (!request.headers.get('content-type')?.toLowerCase().startsWith('application/json')) {
     throw new ApiError(415, 'JSON 요청이 필요합니다.');
@@ -249,19 +257,31 @@ async function route(request, env) {
         .bind(s.account_id).all();
       return reply({ notes: rows.results });
     }
-    const body = await readBody(request);
-    if (!CATEGORIES.has(body.category) ||
-      typeof body.title !== 'string' || body.title.trim().length < 2 || body.title.trim().length > 80 ||
-      typeof body.body !== 'string' || body.body.trim().length < 2 || body.body.trim().length > 1000) {
-      throw new ApiError(400, '메모 분류·제목·내용을 확인해 주세요.');
-    }
+    const fields = noteFields(await readBody(request));
     const note = {
-      id: crypto.randomUUID(), category: body.category,
-      title: body.title.trim(), body: body.body.trim(), created_at: now(),
+      id: crypto.randomUUID(), ...fields, created_at: now(),
     };
     await db.prepare('INSERT INTO notes (id,account_id,category,title,body,created_at) VALUES (?,?,?,?,?,?)')
       .bind(note.id, s.account_id, note.category, note.title, note.body, note.created_at).run();
     return reply({ note }, 201);
+  }
+  const noteItem = /^\/api\/accounts\/([^/]+)\/notes\/([^/]+)$/.exec(path);
+  if (noteItem && (method === 'PATCH' || method === 'DELETE')) {
+    const s = await requireSession(request, db);
+    if (s.account_id !== noteItem[1]) throw new ApiError(403, '다른 계정의 자료에는 접근할 수 없습니다.');
+    if (method === 'PATCH') {
+      const fields = noteFields(await readBody(request));
+      const updated = await db.prepare('UPDATE notes SET category=?,title=?,body=? WHERE id=? AND account_id=?')
+        .bind(fields.category, fields.title, fields.body, noteItem[2], s.account_id).run();
+      if (updated.meta.changes !== 1) throw new ApiError(404, '메모를 찾을 수 없습니다.');
+      const note = await db.prepare('SELECT id,category,title,body,created_at FROM notes WHERE id=? AND account_id=?')
+        .bind(noteItem[2], s.account_id).first();
+      return reply({ note });
+    }
+    const deleted = await db.prepare('DELETE FROM notes WHERE id=? AND account_id=?')
+      .bind(noteItem[2], s.account_id).run();
+    if (deleted.meta.changes !== 1) throw new ApiError(404, '메모를 찾을 수 없습니다.');
+    return reply({ deleted: true });
   }
   if (method === 'GET' && path === '/api/passkeys') {
     const s = await requireSession(request, db);
@@ -295,7 +315,7 @@ export default {
     if (origin !== env.FRONTEND_ORIGIN) return reply({ error: '허용되지 않은 출처입니다.' }, 403);
     const cors = {
       'Access-Control-Allow-Origin': origin,
-      'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS',
+      'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, OPTIONS',
       'Access-Control-Allow-Headers': 'Authorization, Content-Type',
       'Access-Control-Max-Age': '600',
       Vary: 'Origin',
