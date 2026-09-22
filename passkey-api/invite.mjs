@@ -8,9 +8,9 @@ if (!label || label.length > 40) {
 const accountId = randomUUID();
 const value = randomBytes(32).toString('base64url');
 const hash = createHash('sha256').update(value).digest('base64url');
-const expiresAt = Date.now() + 15 * 60 * 1000;
+const expiresAt = Date.now() + 60 * 60 * 1000;
 const sqlLabel = label.replaceAll("'", "''");
-console.log('초대 링크 (15분 유효, 제출물에 포함 금지):');
+console.log('초대 링크 (1시간 유효, 제출물에 포함 금지):');
 console.log('https://prjsghq7.github.io/portfolio/#enroll=' + value);
 console.log('\nD1에 한 번만 실행할 SQL:');
 console.log("INSERT INTO accounts (id, label, created_at) VALUES ('" +

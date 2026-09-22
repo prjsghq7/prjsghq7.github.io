@@ -141,7 +141,7 @@
     notes.replaceChildren();
     if (!items.length) {
       const empty = document.createElement('li');
-      empty.textContent = '아직 메모가 없습니다. 과제용 가상 메모를 세 개 이상 추가해 주세요.';
+      empty.textContent = '아직 메모가 없습니다. 개선 아이디어를 추가해 보세요.';
       notes.append(empty);
       return;
     }
@@ -274,7 +274,7 @@
       });
       noteForm.reset();
       await loadPrivate();
-      message('가상 메모를 저장했습니다.');
+      message('메모를 저장했습니다.');
     });
   });
 })();
